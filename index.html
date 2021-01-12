@@ -1,558 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
 
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-
-<head>
-    
-
-
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Iain Harrison</title>
-
-  <!-- Custom fonts for this theme -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-  <!-- Theme CSS -->
-  <link href="css/freelancer.min.css" rel="stylesheet">
-    
-    
-    <script src="Build/UnityLoader.js"></script>
+        <title>Responsive personal portfolio | Iain Harrison</title>
+        
+        <script src="Build/UnityLoader.js"></script>
     <script>
-      UnityLoader.instantiate("unityContainer", "Build/WebGL Builds.json");
+      UnityLoader.instantiate("unityContainer", "assets/Build/WebGL Builds.json");
     </script>
+        
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu ' ></i>
+                </div>
 
-                    <style>
-div.CENTERDIS {
-  text-align: center;
-}
-                </style>
-    
-</head>
+                <div>
+                    <a href="#" class="nav__logo">Iain</a>
+                </div>
 
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Iain Harrison</a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Masthead -->
-  <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-
-      <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="img/ProfilePictureNoBG.png" alt="">
-
-      <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Iain Harrison</h1>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">Games Programmer</p>
-
-    </div>
-  </header>
-
-  <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="portfolio">
-    <div class="container">
-
-      <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- Portfolio Grid Items -->
-      <div class="row">
-
-        <!-- Portfolio Item 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/Wisp.png" alt="">
-          </div>
-        </div>
-
-        <!-- Portfolio Item 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/City.png" alt="">
-          </div>
-        </div>
-
-        <!-- Portfolio Item 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/circus.png" alt="">
-          </div>
-        </div>
-
-        <!-- Portfolio Item 4 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/game.png" alt="">
-          </div>
-        </div>
-
-        <!-- Portfolio Item 5 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/safe.png" alt="">
-          </div>
-        </div>
-
-        <!-- Portfolio Item 6 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/submarine.png" alt="">
-          </div>
-        </div>
-
-      </div>
-      <!-- /.row -->
-
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="container">
-
-      <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- About Section Content -->
-      <div class="row">
-        <div class="CENTERDIS">
-          <p class="lead">I am a creative and enthusiastic games developer. I enjoy the creation process of games development from conception to realisation. As a games developer I am experienced working in teams, collaborating with artists and designers to create a game. I’m not afraid to give suggestions, and also recognise my own strengths and those of my teammates. For fun I often create games by myself which includes doing the art, sound and design and of course the part I find most enjoyable, programming. If you were to hire me, you would be getting a confident and passionate game developer that will be sure to pull his weight.  I am currently in my second year at Saxion University in Enschede, Netherlands; the course has taught me many things including C#, C++, Unity, and the creation of game engines. I am now looking for an internship to continue my professional development and apply the skills I have learned to the workplace.</p>
-        </div>
-          
-          <div id="unityContainer" style="width: 100%; height: 600px;display: block; margin-left: auto; margin-right: auto;"></div>
-       
-      </div>
-  
-    
-  
-     
-
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-
-      <!-- Contact Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-          
-      </div>
-
-      <!-- Contact Section Form -->
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-            
-
-                      <div class="CENTERDIS">Email me directly at iainjharrison@gmail.com</div>
-
-               
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x' ></i>
                     </div>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <div class="row">
-
-        <!-- Footer Location -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">Location</h4>
-          <p class="lead mb-0">Enschde Netherlands
-            <br></p>
-        </div>
-
-        <!-- Footer Social Icons -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">Around the Web</h4>
-      
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/iain-harrison/">
-            <i class="fab fa-fw fa-linkedin-in"></i>
-          </a>
-       
-        </div>
-
-    
-
-      </div>
-    </div>
-  </footer>
-
-  <!-- Copyright Section -->
-  <section class="copyright py-4 text-center text-white">
-    <div class="container">
-      <small>Copyright &copy; Iain Harrison 2020</small>
-    </div>
-  </section>
-
-  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-  <div class="scroll-to-top d-lg-none position-fixed ">
-    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-      <i class="fa fa-chevron-up"></i>
-    </a>
-  </div>
-
-  <!-- Portfolio Modals -->
-
-  <!-- Portfolio Modal 1 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">The Wispering Guardian</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#works" class="nav__link">Works</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact me</a></li>
+                    </ul>
                 </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/Wisp2.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">“The Wispering Guardian” is a game that is based on campaign to spread awareness about littering in the forest. You play as the wisp with the ability to fly in a large open forest environment in which you must pick up the trash in the forest to activate all forest shrines to help his friends. While completing this goal, the wisp must avoid being spotted by enemies throughout the whole game or else his energy meter/health drops.
-This project was created by a group of 6 students (3 Artists, 2 Designers, 1 Engineer) within a 3-week span. As the only engineer in the group, I was responsible for all the coding of the game (Unity, C#). I created many in-game mechanics like dashing, possessing objects, spooking enemies as well as an energy meter that acts as his health.
-</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </nav>
+        </header>
 
-  <!-- Portfolio Modal 2 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Procedurally generated city</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="../img/portfolio/City2.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Visually inspired by “Mafia 3”, a group of 6 students (3 Artists, 2 Designers, 1 Engineer) created a completely self-made procedural city in Unity (C#). The outcome is a Tool that can be used by Artists and Designers in projects in the Editor without touching any code.
-As the engineer of the group, I was responsible for all the coding. With the finished project, all the assets are modular, building-sizes are editable manually in editor-time, the size of the city and the number of roads in each direction can be specified, all roofs and windows are configurable in the editor and it has a day/night- cycle. To create all of this, only 12 3D models (road tiles, walls, window, roofs) were used.
-</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container bd-grid">
+                    <div class="home__data">
+                        <div class="home__img">
+                            <img src="assets/img/perfil.png" alt="">
+                        </div>
 
-  <!-- Portfolio Modal 3 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">LeARnle</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
+                        <h1 class="home__title">Iain Harrison</h1>
+                        <span class="home__profession">Games Developer</span>
+
+                        <div class="home__social">
+                            <a href="https://www.linkedin.com/in/iain-harrison/" class="home__social-link"><i class='bx bxl-linkedin'></i></a>
+                            <a href="https://github.com/IainHarrison" class="home__social-link"><i class='bx bxl-github'></i>
+                            </a><a href="https://iainharrison.itch.io/" class="home__social-link"><i class='bx bx-dock-top'></i></a>
+                        </div>
+                        
+                        <a download="" href="#" class="button home__button">Download my CV</a>
+                    </div>
                 </div>
-                <!-- Portfolio Modal - Image -->
-                  <div class="iframe-container">
-                  <iframe width="320" height="630" src="https://www.youtube.com/embed/6w5nvH-yTxo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section" id="about">
+                <span class="section-subtitle">My Intro</span>
+                <h2 class="section-title">About Me</h2>
                 
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">To combat the teacher shortage in the Netherlands, a group of 6 students (3 Artists, 2 Designers, 1 Engineer) created “LeArnle” - an app and a book that works with Augmented Reality to teach children, in elementary school, certain subjects. The app contains the questions and stories that the students goes through and the book contains the images that can be scanned by the app.
-As the engineer of the group, I researched a lot on different hardware and technologies that can be used in schools. As we ended up with AR, I coded the whole application (Unity, C#) for the AR learning experience.
-</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                <div id="unityContainer" style="width: 100%; height: 600px;display: block; margin-left: auto; margin-right: auto;"></div>
 
-  <!-- Portfolio Modal 4 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
+                <div class="about__container bd-grid">
+                    <div class="about__data">
+                        <p class="about__description">Hi, I'm a games developer, passionate about creating and developing a wide range of games. I have a few years of experience in this area of work, with multiple quality projects. I am very self-motivated and always striving to improve.</p>
+                        
+                        
+                        
+                        <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
+                    </div>
+
+                    <div>
+                        <div class="about__information">
+                            <h3 class="about__information-title">Information</h3>
+    
+                            <div class="about__information-data">
+                                <i class='bx bx-user about__information-icon'></i>
+                                <span>Iain Harrison</span>
+                            </div>
+    
+                            <div class="about__information-data">
+                                <i class='bx bx-phone about__information-icon' ></i>
+                                <span>+44 7532178713</span>
+                            </div>
+    
+                            <div class="about__information-data">
+                                <i class='bx bx-envelope about__information-icon' ></i>
+                                <span>iainjharrison@gmail.com</span>
+                            </div>
+                        </div>
+    
+                        <div class="about__information">
+                            <h3 class="about__information-title">Experience and support</h3>
+    
+                            <div class="about__information-data">
+                                <i class='bx bx-medal about__information-icon' ></i>
+                                <div>
+                                    <span class="about__information-subtitle">6 Months Job</span>
+                                    <span class="about__information-subtitle-small">Experience</span>
+                                </div>
+                            </div>
+    
+                            <div class="about__information-data">
+                                <i class='bx bx-briefcase-alt about__information-icon' ></i>
+                                <div>
+                                    <span class="about__information-subtitle">75+ Projects</span>
+                                    <span class="about__information-subtitle-small">Completed</span>
+                                </div>
+                            </div>
+    
+                            <div class="about__information-data">
+                                <i class='bx bx-support about__information-icon' ></i>
+                                <div>
+                                    <span class="about__information-subtitle">Education</span>
+                                    <span class="about__information-subtitle-small">Saxion University of applied sciences</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/game.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </section>
 
-  <!-- Portfolio Modal 5 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <span class="section-subtitle">Why Choose Me</span>
+                <h2 class="section-title">My Expertise Area</h2>
+
+                <div class="skills__container bd-grid">
+                    <div class="skills__content">
+                        <h3 class="skills__subtitle">Languages</h3>
+
+                        <div class="skills__data">
+                            <span class="skills__name">C#</span>
+                            <span class="skills__number">90%</span>
+                            <span class="skills__bar skills__csharp"></span>
+                        </div>
+
+                        <div class="skills__data">
+                            <span class="skills__name">C++</span>
+                            <span class="skills__number">65%</span>
+                            <span class="skills__bar skills__cplusplus"></span>
+                        </div>
+                        
+                        <div class="skills__data">
+                            <span class="skills__name">HTML</span>
+                            <span class="skills__number">75%</span>
+                            <span class="skills__bar skills__html"></span>
+                        </div>
+
+                        <div class="skills__data">
+                            <span class="skills__name">CSS</span>
+                            <span class="skills__number">70%</span>
+                            <span class="skills__bar skills__css"></span>
+                        </div>
+                    </div>
+
+                    <div class="skills__content">
+                        <h3 class="skills__subtitle">Engines</h3>
+
+                        <div class="skills__data">
+                            <span class="skills__name">Unity</span>
+                            <span class="skills__number">95%</span>
+                            <span class="skills__bar skills__unity"></span>
+                        </div>
+
+                        <div class="skills__data">
+                            <span class="skills__name">UE4</span>
+                            <span class="skills__number">50%</span>
+                            <span class="skills__bar skills__ue4"></span>
+                        </div>
+
+                        <div class="skills__data">
+                            <span class="skills__name">Godot</span>
+                            <span class="skills__number">40%</span>
+                            <span class="skills__bar skills__godot"></span>
+                        </div>
+
+                        <div class="skills__data">
+                            <span class="skills__name">Custom</span>
+                            <span class="skills__number">75%</span>
+                            <span class="skills__bar skills__custom"></span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/safe.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </section>
 
-  <!-- Portfolio Modal 6 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon">
-                    <i class="fas fa-star"></i>
-                  </div>
-                  <div class="divider-custom-line"></div>
+            <!--===== EDUCATION =====-->
+            <section class="education section">
+                <span class="section-subtitle">Qualification</span>
+                <h2 class="section-title">My Education</h2>
+
+                <div class="education__container bd-grid">
+                    <div class="education__content">
+                        <div>
+                            <h3 class="education__year">2016 - 2018</h3>
+                            <span class="education__university">Universty of Creative Arts</span>
+                        </div>
+
+                        <div class="education__time">
+                            <span class="education__rounder"></span>
+                            <span class="education__line"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="education__race">Foundation Diploma Development</h3>
+                            <span class="education__specialty">Creative media production and technologies</span> 
+                        </div>
+                    </div>
+
+                    <div class="education__content">
+                        <div>
+                            <h3 class="education__year">2019 - 2022</h3>
+                            <span class="education__university">Saxion University of applied sciences</span>
+                        </div>
+
+                        <div class="education__time">
+                            <span class="education__rounder"></span>
+                            <span class="education__line"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="education__race">Diploma Development</h3>
+                            <span class="education__specialty">Creative media Game technologies</span> 
+                        </div>
+                    </div>
                 </div>
-                <!-- Portfolio Modal - Image -->
-                <img class="img-fluid rounded mb-5" src="img/portfolio/submarine.png" alt="">
-                <!-- Portfolio Modal - Text -->
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                <button class="btn btn-primary" href="#" data-dismiss="modal">
-                  <i class="fas fa-times fa-fw"></i>
-                  Close Window
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            </section>
+
+            <!--===== SERVICES =====-->
+            <section class="services section" id="services">
+                <span class="section-subtitle">What I Offer</span>
+                <h2 class="section-title">My Services</h2>
+
+                <div class="services__container bd-grid">
+                    <div class="services__content">
+                        <i class='bx bx-code services__icon'></i>
+                        <h3 class="services__title">Game Development</h3>
+                        <p class="services__description">Do you have an idea for a game you want created? I can do that for you, I have experience making a wide range of different games and interactive experiences.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <i class='bx bx-pen services__icon'></i>
+                        <h3 class="services__title">Live2D Avatars</h3>
+                        <p class="services__description">Do you want your own virtual avatar? Using Live2D I can create a fully trackable virtual avatar from the chest up for your streams, videos or personal use.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <i class='bx bx-mobile-alt services__icon'></i>
+                        <h3 class="services__title">App Development</h3>
+                        <p class="services__description">Do you have an idea for an app you want made? Using the Unity game engine I can create that for you and even implement feature such as sharing and in app purchasing.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== PROJECT IN MIND =====-->
+            <section class="project section">
+                <div class="project__container bd-grid">
+                    <div class="project__data">
+                        <h2 class="section-title project__title">Do you have a project in mind</h2>
+                        <p class="project__description">If you have a project that you want to carry out, do not hesitate and tell me what it is, and what services I can offer you, contact me directly here.</p>
+                        <a href="#contact" class="button button__light">Contact Me</a>
+                    </div>
+
+                    <img src="assets/img/projectmind.png" alt="" class="project__img">
+                </div>
+            </section>
+
+            <!--===== WORKS =====-->
+            <section class="works section" id="works">
+                <span class="section-subtitle">My Portfolio</span>
+                <h2 class="section-title">Recent Works</h2>
+
+                <div class="works__container bd-grid"> 
+                    
+                    <div class="works__img">
+                        <img src="assets/img/work1.jpg" alt="">
+                        <div class="works__data">
+                            <button id="workThree" class="works__button" data-modal-target="#Propel"><i class='bx bx-window-open' ></i></button>
+                            <!-- <a href="#" class="works__link"><i class='bx bx-link-alt' ></i></a> -->
+                            <span class="works__title">Talespin Propel</span>                 
+                        </div>     
+                    </div>
+                    
+                    
+                    <div class="works__img">
+                        <img src="assets/img/work2.jpg" alt="">
+
+                        <div class="works__data">
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:6729112015492788225/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6728712887650652160%2C6729111797380591616)" class="works__link"><i class='bx bx-link-alt' ></i></a>
+                            <span class="works__title">Game a day challange</span>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="works__img">
+                        <img src="assets/img/work3.jpg" alt="">
+                        <div class="works__data">
+                            <button id="workOne" class="works__button" data-modal-target="#LTU"><i class='bx bx-window-open' ></i></button>
+                            <!-- <a href="#" class="works__link"><i class='bx bx-link-alt' ></i></a> -->
+                            <span class="works__title">Talespin LTU</span>                 
+                        </div>     
+                    </div>
+                    
+                    <div class="works__img">
+                        <img src="assets/img/work4.jpg" alt="">
+
+                        <div class="works__data">
+                            <a href="#" class="works__link"><i class='bx bx-link-alt' ></i></a>
+                            <span class="works__title">Work 4</span>
+                        </div>
+                    </div>
+                    
+                    <div class="works__img">
+                        <img src="assets/img/work5.jpg" alt="">
+
+                        <div class="works__data">
+                            <a href="#" class="works__link"><i class='bx bx-link-alt' ></i></a>
+                            <span class="works__title">Work 5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="works__img">
+                        <img src="assets/img/work6.jpg" alt="">
+
+                        <div class="works__data">
+                            <a href="#" class="works__link"><i class='bx bx-link-alt' ></i></a>
+                            <span class="works__title">Work 6</span>
+                        </div>
+                    </div>
+                    
+                </div>      
+            </section>
+            
+                 <div class="modal" id="LTU">
+    <div class="modal-header">
+      <div class="title">Talespin leading through uncertainty</div>
+      <button data-close-button class="close-button">&times;</button>
     </div>
+    <div class="modal-body">
+      During my internship at Talespin I had the opportunity to work on a project called Leading through uncertainty. This project was developed due to the effects of the COVID-19 pandemic and its impact on the economy and workplace putting many business leaders and managers in the most challenging situation of their careers. Leading through uncertainty is a series of VR learning modules that leverage powerful technology to help leaders prepare for times of crisis and uncertainty, built for project CoPilot Leading through uncertainty is a VR based interactive experience where the user can gain knowledge and experience in various soft skills not readily available for practice.
+I started work at Talespin during the end of this project so I was able to see and learn how the company polishes a project and deals with any last bugs and issues.
+    </div>
+                     <a href="https://www.talespin.com/leading-through-uncertainty" class="works__link__open"><i class='bx bx-link-alt' ></i></a>
   </div>
+            
+    <div class="modal" id="Propel">
+    <div class="modal-header">
+      <div class="title">Talespin Propel</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+      Conducting my internship at Talespin, whilst working at Talespin I was very fortunate to not only have the opportunity to help wrap up project Leading through uncertainty but was also able to be placed on the engineering team to help develop a completely new project. I was able to contribute my efforts towards project Propel. I was part of its development team from an empty project file to the first version of alpha. Propel is a project like CoPilot but instead of teaching the user soft skills like communication it instead teaches the user hard skills like how to use a manifold gauge. 
+I worked on a wide range of different feature implementations during this time from a dynamic interactable wrist watch that could be tapped in VR to pause the experience, to the implementation and polish of tools used by the player in the experience.
+    </div>
+        <a href="https://www.talespin.com/propel" class="works__link__open"><i class='bx bx-link-alt' ></i></a>
+  </div>
+            
+            
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <span class="section-subtitle">Contact Me</span>
+                <h2 class="section-title">Get In Touch</h2>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <div class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <div class="contact__inputs">
+                            <input type="text" placeholder="Name" class="contact__input">
+                            <input type="mail" placeholder="Email" class="contact__input">
+                        </div>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                        <input type="text" placeholder="Project" class="contact__input">
 
-  <!-- Contact Form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
+                        <textarea name="" id="" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/freelancer.min.js"></script>
+                        <input type="submit" value="Send Message" class="button contact__button">
+                    </form>
 
-</body>
+                    <div>
+                        <div class="contact__info">
+                            <h3 class="contact__subtitle">Call me</h3>
+                            <span class="contact__text">+44 7532 178713</span>
+                        </div>
 
+                        <div class="contact__info">
+                            <h3 class="contact__subtitle">E-mail</h3>
+                            <span class="contact__text">iainjharrison@gmail.com</span>
+                            <span class="contact__text"></span>
+                        </div>
+
+                        <div class="contact__info">
+                            <h3 class="contact__subtitle">Location</h3>
+                            <span class="contact__text"></span>
+                            <span class="contact__text">Enschede - Netherlands </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                     
+            
+              <div id="overlay"></div>
+            
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer section">
+            <div class="footer__container bd-grid">
+                <h1 class="footer__title">Iain Harrison</h1>
+                <p class="footer__description">I am Iain Harrison and this is my personal website, consult me here.</p>
+
+                <div class="footer__social">
+                    <a href="https://github.com/IainHarrison" class="footer__link"><i class='bx bxl-github' ></i></a>
+                    <a href="https://www.linkedin.com/in/iain-harrison/" class="footer__link"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="https://iainharrison.itch.io/" class="footer__link"><i class='bx bx-dock-top' ></i></a>
+                </div>
+                <p class="footer__copy"></p>
+            </div>
+        </footer>
+        
+        
+        
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
