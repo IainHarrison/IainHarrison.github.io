@@ -12,10 +12,6 @@
 
         <title>Responsive personal portfolio | Iain Harrison</title>
         
-        
-        <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-        
         <script src="assets/Build/UnityLoader.js"></script>
     <script>
       UnityLoader.instantiate("unityContainer", "assets/Build/WebGL Builds.json");
@@ -85,10 +81,7 @@
                         <p class="about__description">Hi, I'm a games developer, passionate about creating and developing a wide range of games. I have a few years of experience in this area of work, with multiple quality projects. I am very self-motivated and always striving to improve.</p>
                         
                        <div id="unityContainer"></div>
-                        <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Area 52</div>
+<div style="height:20px; width: %UNITY_WIDTH%px; background: green;" onclick="unityInstance.SetFullscreen(1)"><b>Click here to make it full screen.</b></div>
                         
                         <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
                     </div>
