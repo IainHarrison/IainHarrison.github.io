@@ -753,7 +753,7 @@ img {
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (min-width: 768px) {
-
+  
     
   .home__button {
     width: initial;
@@ -872,5 +872,10 @@ img {
         grid-template-columns: 1fr 0fr;
         padding: 3rem 0;
     }
-  }
+}
 
+@media screen and (max-width: 768px) {
+  .game{
+        display:  none;
+    }
+}
