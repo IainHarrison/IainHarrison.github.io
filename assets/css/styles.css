@@ -878,4 +878,7 @@ img {
   .game{
         display:  none;
     }
+    .modal {
+        width: 90%
+    }
 }
