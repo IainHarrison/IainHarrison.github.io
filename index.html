@@ -82,7 +82,9 @@
                             <script src="assets/Build/Builds.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        codeUrl: "assets/Build/Builds.wasm.br",
+        dataUrl: "assets/Build/Builds.data",
+        frameworkUrl: "assets/Build/Builds.framework.js",
+        codeUrl: "assets/Build/Builds.wasm",
         streamingAssetsUrl: "assets/StreamingAssets",
         companyName: "DefaultCompany",
         productName: "AboutMe portfolio game",
