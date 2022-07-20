@@ -12,11 +12,21 @@
 
         <title>Iain Harrison | Portfolio</title>
         
-        <script src="assets/Build/UnityLoader.js"></script>
-    <script>
-    var unityInstance = UnityLoader.instantiate("unityContainer", "assets/Build/WebGL Builds.json");
-    </script>
-        
+        <script src="assets/Build.loader.js"></script>
+	<script>
+	var unityInstance = createUnityInstance("unityContainer", {
+        dataUrl: "Build/Builds.data.br",
+        frameworkUrl: "Build/Builds.framework.js.br",
+        codeUrl: "Build/Builds.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "AboutMe portfolio game",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+	</script>   
+		
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -65,7 +75,7 @@
                             </a><a href="https://iainharrison.itch.io/" class="home__social-link"><i class='bx bx-dock-top'></i></a>
                         </div>
                         
-                        <a download="" href="Iain%20Harrison%20CV%202021.docx" class="button home__button">Download my CV</a>
+                        <a download="" href="Iain%20Harrison%20CV%202022.docx" class="button home__button">Download my CV</a>
                     </div>
                 </div>
             </section>
