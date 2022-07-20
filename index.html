@@ -12,21 +12,6 @@
 
         <title>Iain Harrison | Portfolio</title>
         
-        <script src="assets/Build.loader.js"></script>
-	<script>
-	var unityInstance = createUnityInstance("unityContainer", {
-        dataUrl: "Build/Builds.data.br",
-        frameworkUrl: "Build/Builds.framework.js.br",
-        codeUrl: "Build/Builds.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "AboutMe portfolio game",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-	</script>   
-		
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -95,6 +80,23 @@
                             </section>
                         <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
                     </div>
+
+        <script src="assets/Build.loader.js"></script>
+    <script>
+      createUnityInstance("unityContainer", {
+        dataUrl: "Build/Builds.data.br",
+        frameworkUrl: "Build/Builds.framework.js.br",
+        codeUrl: "Build/Builds.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "AboutMe portfolio game",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script> 
+		
+
 
                     <div>
                         <div class="about__information">
