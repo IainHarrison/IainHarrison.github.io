@@ -14,7 +14,7 @@
         
           <script src="assets/Build.loader.js"></script>
     <script>
-      createUnityInstance("unityContainer", {
+      createUnityInstance(document.querySelector("#unity-canvas"), {
         dataUrl: "assets/Build/Builds.data.br",
         frameworkUrl: "assets/Build/Builds.framework.js.br",
         codeUrl: "assets/Build/Builds.wasm.br",
@@ -90,7 +90,7 @@
                         <p class="about__description">Hi, I'm a games developer, passionate about creating and developing a wide range of games. I have a few years of experience in this area of work, with multiple quality projects. I am very self-motivated and always striving to improve.</p>
                         
                         <section class="game">
-                       <div id="unityContainer"></div>
+                            <canvas id="unity-canvas"></canvas>
 <div style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;" onclick="unityInstance.SetFullscreen(1)"><b>Click here to make it full screen.</b></div>
                             </section>
                         <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
