@@ -12,20 +12,7 @@
 
         <title>Iain Harrison | Portfolio</title>
         
-        <script src="assets/Build/Builds.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "assets/Build/Builds.data.br",
-        frameworkUrl: "assets/Build/Builds.framework.js.br",
-        codeUrl: "assets/Build/Builds.wasm.br",
-        streamingAssetsUrl: "assets/StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "AboutMe portfolio game",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-    </script> 
+         
         
     </head>
     <body>
@@ -91,6 +78,22 @@
                         
                         <section class="game">
                             <canvas id="unity-canvas"></canvas>
+                            
+                            <script src="assets/Build/Builds.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "assets/Build/Builds.data.br",
+        frameworkUrl: "assets/Build/Builds.framework.js.br",
+        codeUrl: "assets/Build/Builds.wasm.br",
+        streamingAssetsUrl: "assets/StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "AboutMe portfolio game",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+                            
 <div style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;" onclick="unityInstance.SetFullscreen(1)"><b>Click here to make it full screen.</b></div>
                             </section>
                         <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
