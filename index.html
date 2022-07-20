@@ -81,7 +81,7 @@
                             
                             <script src="assets/Build/Builds.loader.js"></script>
     <script>
-      var unityInstance = createUnityInstance(document.querySelector("#unity-canvas" ), {
+      createUnityInstance(document.querySelector("#unity-canvas" ), {
         dataUrl: "assets/Build/Builds.data",
         frameworkUrl: "assets/Build/Builds.framework.js",
         codeUrl: "assets/Build/Builds.wasm",
@@ -94,7 +94,7 @@
       });
     </script>
                             
-<div style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;" onclick="unityInstance.SetFullscreen(1)"><b>Click here to make it full screen.</b></div>
+<div style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;" onclick="unityInstance.SetFullscreen(1)"><b>Click- here to make it full screen.</b></div>
                             </section>
                         <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
                     </div>
