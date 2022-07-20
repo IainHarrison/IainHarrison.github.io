@@ -294,7 +294,7 @@ img {
   text-align: center;
 }
 
-canvas {
+#unity-canvas {
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
