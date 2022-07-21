@@ -11,9 +11,9 @@
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
         <title>Iain Harrison | Portfolio</title>
-        
-         
-        
+
+
+
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -61,7 +61,7 @@
                             <a href="https://github.com/IainHarrison" class="home__social-link"><i class='bx bxl-github'></i>
                             </a><a href="https://iainharrison.itch.io/" class="home__social-link"><i class='bx bx-dock-top'></i></a>
                         </div>
-                        
+
                         <a download="" href="Iain%20Harrison%20CV%202022.docx" class="button home__button">Download my CV</a>
                     </div>
                 </div>
@@ -75,60 +75,61 @@
                 <div class="about__container bd-grid">
                     <div class="about__data">
                         <p class="about__description">Hi, I'm a games developer, passionate about creating and developing a wide range of games. I have a few years of experience in this area of work, with multiple quality projects. I am very self-motivated and always striving to improve.</p>
-                        
+
                         <section class="game">
                             <canvas id="unity-canvas"></canvas>
-                            
+
                             <script src="assets/Build/Builds.loader.js"></script>
-                            
+
                             <div id="fullScreen" style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;"><b>Click here to make it full screen.</b></div>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas" ), {
-        dataUrl: "assets/Build/Builds.data",
-        frameworkUrl: "assets/Build/Builds.framework.js",
-        codeUrl: "assets/Build/Builds.wasm",
-        streamingAssetsUrl: "assets/StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "AboutMe portfolio game",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-        
-        var fullscreenButton = document.querySelector("#fullScreen");
-    fullscreenButton.onclick = () => {
-    unityInstance.SetFullscreen(1);  
-    </script>
-                           
-                            </section>
+                            <script>
+                                createUnityInstance(document.querySelector("#unity-canvas" ), {
+                                    dataUrl: "assets/Build/Builds.data",
+                                    frameworkUrl: "assets/Build/Builds.framework.js",
+                                    codeUrl: "assets/Build/Builds.wasm",
+                                    streamingAssetsUrl: "assets/StreamingAssets",
+                                    companyName: "DefaultCompany",
+                                    productName: "AboutMe portfolio game",
+                                    productVersion: "1.0",
+                                    // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+                                    // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+                                });
+
+                                var fullscreenButton = document.querySelector("#fullScreen");
+                                fullscreenButton.onclick = () => {
+                                    unityInstance.SetFullscreen(1);  
+                                    };
+                            </script>
+
+                        </section>
                         <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
                     </div>
-		
+
 
 
                     <div>
                         <div class="about__information">
                             <h3 class="about__information-title">Information</h3>
-    
+
                             <div class="about__information-data">
                                 <i class='bx bx-user about__information-icon'></i>
                                 <span>Iain Harrison</span>
                             </div>
-    
+
                             <div class="about__information-data">
                                 <i class='bx bx-phone about__information-icon' ></i>
                                 <span>+44 7532178713</span>
                             </div>
-    
+
                             <div class="about__information-data">
                                 <i class='bx bx-envelope about__information-icon' ></i>
                                 <span>iainjharrison@gmail.com</span>
                             </div>
                         </div>
-    
+
                         <div class="about__information">
                             <h3 class="about__information-title">Experience and support</h3>
-    
+
                             <div class="about__information-data">
                                 <i class='bx bx-medal about__information-icon' ></i>
                                 <div>
@@ -136,7 +137,7 @@
                                     <span class="about__information-subtitle-small">Experience</span>
                                 </div>
                             </div>
-    
+
                             <div class="about__information-data">
                                 <i class='bx bx-briefcase-alt about__information-icon' ></i>
                                 <div>
@@ -144,7 +145,7 @@
                                     <span class="about__information-subtitle-small">Completed</span>
                                 </div>
                             </div>
-    
+
                             <div class="about__information-data">
                                 <i class='bx bx-support about__information-icon' ></i>
                                 <div>
@@ -177,7 +178,7 @@
                             <span class="skills__number">65%</span>
                             <span class="skills__bar skills__cplusplus"></span>
                         </div>
-                        
+
                         <div class="skills__data">
                             <span class="skills__name">HTML</span>
                             <span class="skills__number">75%</span>
@@ -307,7 +308,7 @@
                 <h2 class="section-title">Recent Works</h2>
 
                 <div class="works__container bd-grid">                  
-                    
+
                     <div class="works__img">
                         <img src="assets/img/work1.jpg" alt="">
 
@@ -316,7 +317,7 @@
                             <span class="works__title">China Minor</span>
                         </div>
                     </div>
-                    
+
                     <div class="works__img">
                         <img src="assets/img/work2.jpg" alt="">
 
@@ -325,7 +326,7 @@
                             <span class="works__title">My Own Mobile Game</span>
                         </div>
                     </div>
-                    
+
                     <div class="works__img">
                         <img src="assets/img/work3.jpg" alt="">
 
@@ -334,7 +335,7 @@
                             <span class="works__title">Global Game Jam</span>
                         </div>
                     </div>
-                    
+
                     <div class="works__img">
                         <img src="assets/img/work4.jpg" alt="">
                         <div class="works__data">
@@ -343,8 +344,8 @@
                             <span class="works__title">Talespin Propel</span>                 
                         </div>     
                     </div>
-                    
-                    
+
+
                     <div class="works__img">
                         <img src="assets/img/work5.jpg" alt="">
 
@@ -353,8 +354,8 @@
                             <span class="works__title">Game a day challange</span>
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="works__img">
                         <img src="assets/img/work6.jpg" alt="">
                         <div class="works__data">
@@ -363,55 +364,55 @@
                             <span class="works__title">Talespin LTU</span>                 
                         </div>     
                     </div>
-                    
+
                 </div>      
             </section>
-            
-                 <div class="modal" id="LTU">
-    <div class="modal-header">
-      <div class="title">Talespin leading through uncertainty</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-      Whilst working at Talespin I was very fortunate to not only have the opportunity to help wrap up project 'Leading through Uncertainty' but was also able to be placed on the engineering team to help develop a completely new project. I was able to contribute my efforts towards project Propel. I was part of its development team from an empty project file to the first version of alpha. Propel is a project like CoPilot but instead of teaching the user soft skills like communication it teaches the user hard skills like how to use a manifold gauge. I worked on a wide range of different feature implementations during this time from a dynamic interactable wrist watch that could be tapped in VR to pause the experience, to the implementation and polish of tools used by the player in the experience.
-    </div>
-                     <a href="https://www.talespin.com/leading-through-uncertainty" class="works__link__open"><i class='bx bx-link-alt' ></i></a>
-  </div>
-            
-    <div class="modal" id="Propel">
-    <div class="modal-header">
-      <div class="title">Talespin Propel</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-      During my internship at Talespin I had the opportunity to work on a project called 'Leading through Uncertainty'. This project was developed due to the effects of the COVID-19 pandemic and its impact on the economy and workplace, putting many business leaders and managers in the most challenging situation of their careers. 'Leading through Uncertainty' is a series of VR learning modules that leverage powerful technology to help leaders prepare for times of crisis and uncertainty, built for project CoPilot. 'Leading through Uncertainty' is a VR based interactive experience where the user can gain knowledge and experience in various soft skills not readily available for practice. I started work at Talespin during the end of this project so I was able to see and learn how the company polishes a project and deals with any last bugs and issues.
-    </div>
-        <a href="https://www.talespin.com/propel" class="works__link__open"><i class='bx bx-link-alt' ></i></a>
-  </div>
-            
+
+            <div class="modal" id="LTU">
+                <div class="modal-header">
+                    <div class="title">Talespin leading through uncertainty</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Whilst working at Talespin I was very fortunate to not only have the opportunity to help wrap up project 'Leading through Uncertainty' but was also able to be placed on the engineering team to help develop a completely new project. I was able to contribute my efforts towards project Propel. I was part of its development team from an empty project file to the first version of alpha. Propel is a project like CoPilot but instead of teaching the user soft skills like communication it teaches the user hard skills like how to use a manifold gauge. I worked on a wide range of different feature implementations during this time from a dynamic interactable wrist watch that could be tapped in VR to pause the experience, to the implementation and polish of tools used by the player in the experience.
+                </div>
+                <a href="https://www.talespin.com/leading-through-uncertainty" class="works__link__open"><i class='bx bx-link-alt' ></i></a>
+            </div>
+
+            <div class="modal" id="Propel">
+                <div class="modal-header">
+                    <div class="title">Talespin Propel</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    During my internship at Talespin I had the opportunity to work on a project called 'Leading through Uncertainty'. This project was developed due to the effects of the COVID-19 pandemic and its impact on the economy and workplace, putting many business leaders and managers in the most challenging situation of their careers. 'Leading through Uncertainty' is a series of VR learning modules that leverage powerful technology to help leaders prepare for times of crisis and uncertainty, built for project CoPilot. 'Leading through Uncertainty' is a VR based interactive experience where the user can gain knowledge and experience in various soft skills not readily available for practice. I started work at Talespin during the end of this project so I was able to see and learn how the company polishes a project and deals with any last bugs and issues.
+                </div>
+                <a href="https://www.talespin.com/propel" class="works__link__open"><i class='bx bx-link-alt' ></i></a>
+            </div>
+
             <div class="modal" id="MobileGame">
-    <div class="modal-header">
-      <div class="title">Mobile Game about Cats</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-        <img style="width: 40%; margin-bottom: 1%; margin-left: auto; margin-right: auto;" src="assets/vid/CatLookAt.gif" alt="">
-      Alongside university, I am currently working on my own mobile game. Inspired by games like KleptoCats and Neko Atsume, my mobile game is about adopting a wide range of different cats that visit the players' house, whilst upgrading and furnishing the house with a wider range of collectables. Collectables improve stats and fulfil visitation requirements for new rarer cats. I am developing the game inside of the Unity game engine and support multiple languages aiming for release and advertisement in multiple countries. I have spent a lot of time researching effective strategies to maximize monetization for mobile games and effective use of multiple advertising services like Admob and Unity ads. I have been working on this project since 2020 creating videos on YouTube documenting the development process, I am working on all systems, art and design by myself. Some of the art is then run through a program called Live2D that can make 2D imagery much more dynamic and 3D.
+                <div class="modal-header">
+                    <div class="title">Mobile Game about Cats</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <img style="width: 40%; margin-bottom: 1%; margin-left: auto; margin-right: auto;" src="assets/vid/CatLookAt.gif" alt="">
+                    Alongside university, I am currently working on my own mobile game. Inspired by games like KleptoCats and Neko Atsume, my mobile game is about adopting a wide range of different cats that visit the players' house, whilst upgrading and furnishing the house with a wider range of collectables. Collectables improve stats and fulfil visitation requirements for new rarer cats. I am developing the game inside of the Unity game engine and support multiple languages aiming for release and advertisement in multiple countries. I have spent a lot of time researching effective strategies to maximize monetization for mobile games and effective use of multiple advertising services like Admob and Unity ads. I have been working on this project since 2020 creating videos on YouTube documenting the development process, I am working on all systems, art and design by myself. Some of the art is then run through a program called Live2D that can make 2D imagery much more dynamic and 3D.
 
-    </div>
-  </div>
-            
-                     <div class="modal" id="ChinaMinor">
-    <div class="modal-header">
-      <div class="title">Doing Business With China Minor</div>
-      <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="modal-body">
-      During the 3rd year of my university course, I completed a minor called “Doing Business with China”; I chose this minor as I aspire to release my mobile game in China among other countries. I have always loved experiencing the cultures of different people and countries ever since moving from my home country of England to the Netherlands. During the minor I learned professional Chinese business practises, Chinese history, the Chinese language and intercultural management among other things. The most important thing that I have learned during this minor is how to empathise with cultural differences within a workplace, not just Chinese but all culture is diverse, unique and interesting.
+                </div>
+            </div>
 
-    </div>
-  </div>
-            
+            <div class="modal" id="ChinaMinor">
+                <div class="modal-header">
+                    <div class="title">Doing Business With China Minor</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    During the 3rd year of my university course, I completed a minor called “Doing Business with China”; I chose this minor as I aspire to release my mobile game in China among other countries. I have always loved experiencing the cultures of different people and countries ever since moving from my home country of England to the Netherlands. During the minor I learned professional Chinese business practises, Chinese history, the Chinese language and intercultural management among other things. The most important thing that I have learned during this minor is how to empathise with cultural differences within a workplace, not just Chinese but all culture is diverse, unique and interesting.
+
+                </div>
+            </div>
+
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <span class="section-subtitle">Contact Me</span>
@@ -451,9 +452,9 @@
                     </div>
                 </div>
             </section>               
-            
-              <div id="overlay"></div>
-            
+
+            <div id="overlay"></div>
+
         </main>
 
         <!--===== FOOTER =====-->
@@ -470,9 +471,9 @@
                 <p class="footer__copy"></p>
             </div>
         </footer>
-        
-        
-        
+
+
+
         <!--===== MAIN JS =====-->
         <script src="assets/js/main.js"></script>
         <script src="assets/js/script.js"></script>
