@@ -80,6 +80,8 @@
                             <canvas id="unity-canvas"></canvas>
                             
                             <script src="assets/Build/Builds.loader.js"></script>
+                            
+                            <div id="fullScreen" style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;"><b>Click here to make it full screen.</b></div>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas" ), {
         dataUrl: "assets/Build/Builds.data",
@@ -92,15 +94,11 @@
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
+        
+        var fullscreenButton = document.querySelector("#fullScreen");
+    fullscreenButton.onclick = () => {
+    unityInstance.SetFullscreen(1);  
     </script>
-                            
-<div id="fullScreen" style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;"><b>Click here to make it full screen.</b></div>
-
-                            <script> 
-                                var fullscreenButton = document.querySelector("#fullScreen");
-                                fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);  
-                            </script>
                            
                             </section>
                         <!-- <img src="assets/img/about.png" alt="" class="about__img"> -->
