@@ -83,7 +83,8 @@
 
                             <div id="fullScreen" style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;"><b>Click here to make it full screen.</b></div>
                             <script>
-                                var unityInstance = createUnityInstance(document.querySelector("#unity-canvas" ), {
+                                var fullscreenButton = document.querySelector("#fullScreen");
+                                createUnityInstance(document.querySelector("#unity-canvas" ), {
                                     dataUrl: "assets/Build/Builds.data",
                                     frameworkUrl: "assets/Build/Builds.framework.js",
                                     codeUrl: "assets/Build/Builds.wasm",
@@ -93,12 +94,11 @@
                                     productVersion: "1.0",
                                     // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
                                     // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-                                });
-
-                                var fullscreenButton = document.querySelector("#fullScreen");
-                                fullscreenButton.onclick = () => {
-                                    unityInstance.SetFullscreen(1);  
+                                }).then((unityInstance) => {
+                                    fullscreenButton.onclick = () => {
+                                        unityInstance.SetFullscreen(1);  
                                     };
+                                    });
                             </script>
 
                         </section>
