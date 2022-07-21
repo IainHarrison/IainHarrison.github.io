@@ -83,7 +83,7 @@
 
                             <div id="fullScreen" style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;"><b>Click here to make it full screen.</b></div>
                             <script>
-                                createUnityInstance(document.querySelector("#unity-canvas" ), {
+                                var unityInstance = createUnityInstance(document.querySelector("#unity-canvas" ), {
                                     dataUrl: "assets/Build/Builds.data",
                                     frameworkUrl: "assets/Build/Builds.framework.js",
                                     codeUrl: "assets/Build/Builds.wasm",
