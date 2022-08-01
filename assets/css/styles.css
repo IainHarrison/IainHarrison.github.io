@@ -743,6 +743,18 @@ img {
   padding: 10px 15px;
 }
 
+.modal a:link {
+  color: #4CA4FC;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.modal a:hover {
+  color: #486F9E;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 #overlay {
   position: fixed;
   opacity: 0;
