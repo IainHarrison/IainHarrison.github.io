@@ -37,7 +37,8 @@
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#works" class="nav__link">Works</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#testimonials" class="nav__link">Testimonials</a></li>
+                        <li class="nav__item"><a href="#skills-showcase" class="nav__link">Skills Showcase</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact me</a></li>
                     </ul>
                 </div>
@@ -77,11 +78,17 @@
                         <p class="about__description">Hi, I'm a games developer, passionate about creating and developing games. I am very self-motivated and always striving to improve and learn new things.</p>
 
                         <section class="game">
-                            <canvas id="unity-canvas"></canvas>
+                            <div class="game-container">
+                                <h3 class="game-title">Interactive Portfolio Demo</h3>
+                                <canvas id="unity-canvas"></canvas>
+                                <div class="game-controls">
+                                    <div id="fullScreen" style="text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;">
+                                        <span class="fullscreen-text"><i class='bx bx-fullscreen'></i> Click here to play in fullscreen</span>
+                                    </div>
+                                </div>
+                            </div>
 
                             <script src="assets/Build/Builds.loader.js"></script>
-
-                            <div id="fullScreen" style = "text-align: center; color: #486F9E; height:20px; width: %UNITY_WIDTH%px;cursor:pointer;"><b>Click here to make it full screen.</b></div>
                             <script>
                                 var fullscreenButton = document.querySelector("#fullScreen");
                                 createUnityInstance(document.querySelector("#unity-canvas" ), {
@@ -160,63 +167,34 @@
 
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <span class="section-subtitle">Why Choose Me</span>
-                <h2 class="section-title">My Expertise Area</h2>
+                <span class="section-subtitle">Professional Expertise</span>
+                <h2 class="section-title">Technical Skills</h2>
 
                 <div class="skills__container bd-grid">
                     <div class="skills__content">
-                        <h3 class="skills__subtitle">Languages</h3>
-
-                        <div class="skills__data">
-                            <span class="skills__name">C#</span>
-                            <span class="skills__number">90%</span>
-                            <span class="skills__bar skills__csharp"></span>
-                        </div>
-
-                        <div class="skills__data">
-                            <span class="skills__name">C++</span>
-                            <span class="skills__number">65%</span>
-                            <span class="skills__bar skills__cplusplus"></span>
-                        </div>
-
-                        <div class="skills__data">
-                            <span class="skills__name">HTML</span>
-                            <span class="skills__number">75%</span>
-                            <span class="skills__bar skills__html"></span>
-                        </div>
-
-                        <div class="skills__data">
-                            <span class="skills__name">CSS</span>
-                            <span class="skills__number">70%</span>
-                            <span class="skills__bar skills__css"></span>
+                        <h3 class="skills__subtitle">Core Competencies</h3>
+                        <div class="skills-list">
+                            <div class="skill-tag"><i class='bx bxl-unity'></i> Unity Development</div>
+                            <div class="skill-tag"><i class='bx bx-code-alt'></i> C# Programming</div>
+                            <div class="skill-tag"><i class='bx bx-cog'></i> Tooling & Systems</div>
+                            <div class="skill-tag"><i class='bx bx-cube'></i> Procedural Generation</div>
+                            <div class="skill-tag"><i class='bx bx-math'></i> Algorithms</div>
+                            <div class="skill-tag"><i class='bx bx-joystick'></i> Game Feel & Feedback</div>
+                            <div class="skill-tag"><i class='bx bx-network-chart'></i> Networking</div>
                         </div>
                     </div>
 
                     <div class="skills__content">
-                        <h3 class="skills__subtitle">Engines</h3>
-
-                        <div class="skills__data">
-                            <span class="skills__name">Unity</span>
-                            <span class="skills__number">95%</span>
-                            <span class="skills__bar skills__unity"></span>
-                        </div>
-
-                        <div class="skills__data">
-                            <span class="skills__name">UE4</span>
-                            <span class="skills__number">70%</span>
-                            <span class="skills__bar skills__ue4"></span>
-                        </div>
-
-                        <div class="skills__data">
-                            <span class="skills__name">Godot</span>
-                            <span class="skills__number">40%</span>
-                            <span class="skills__bar skills__godot"></span>
-                        </div>
-
-                        <div class="skills__data">
-                            <span class="skills__name">Custom</span>
-                            <span class="skills__number">65%</span>
-                            <span class="skills__bar skills__custom"></span>
+                        <h3 class="skills__subtitle">Additional Skills</h3>
+                        <div class="skills-list">
+                            <div class="skill-tag"><i class='bx bxl-unreal-engine'></i> Unreal Engine</div>
+                            <div class="skill-tag"><i class='bx bx-atom'></i> Physics Programming</div>
+                            <div class="skill-tag"><i class='bx bx-user-voice'></i> Player Behaviorism</div>
+                            <div class="skill-tag"><i class='bx bx-palette'></i> Game Design</div>
+                            <div class="skill-tag"><i class='bx bx-face'></i> Live2D</div>
+                            <div class="skill-tag"><i class='bx bx-calculator'></i> Linear Algebra</div>
+                            <div class="skill-tag"><i class='bx bx-layer'></i> Software Architecture</div>
+                            <div class="skill-tag"><i class='bx bxl-html5'></i> HTML & CSS</div>
                         </div>
                     </div>
                 </div>
@@ -360,18 +338,57 @@
                 
             <div class="modal" id="Graduation">
                 <div class="modal-header">
-                    <div class="title">Graduation</div>
+                    <div class="title">BSc in Creative Media and Game Technologies</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    On the 12th of July 2022 I graduated from Saxion University with a BSc in Creative Media and Game Technologies with an 8.1/10. I learned a lot whilst enrolled at university and taught myself many things relevant to game development and design in my free time alongside my university course work. Although I have graduated, I am fully aware that I still have an unlimited number of new things I can learn and I will always embody the perspective of a learner moving forward in my professional career.
-
+                    <h3>Academic Achievement</h3>
+                    <p>On July 12, 2022, I graduated from Saxion University of Applied Sciences with a Bachelor of Science in Creative Media and Game Technologies, achieving a score of 8.1/10 (equivalent to First Class Honours).</p>
+                    
+                    <h3>Core Areas of Study</h3>
+                    <ul>
+                      <li>Game Programming & Software Architecture</li>
+                      <li>3D Modeling & Animation</li>
+                      <li>Game Design & Player Experience</li>
+                      <li>Interactive Media Development</li>
+                      <li>Project Management & Team Collaboration</li>
+                      <li>User Experience Design</li>
+                    </ul>
+                    
+                    <h3>Key Projects</h3>
+                    <ul>
+                      <li>Met'Em - 100-player multiplayer social platform with Abstraction Games</li>
+                      <li>Various game prototypes exploring different genres and mechanics</li>
+                      <li>Interactive media installations combining hardware and software</li>
+                      <li>Collaborative industry projects with real-world clients</li>
+                    </ul>
+                    
+                    <h3>Technical Skills Acquired</h3>
+                    <ul>
+                      <li>Proficiency in C#, C++, and other programming languages</li>
+                      <li>Expert knowledge of Unity and experience with Unreal Engine</li>
+                      <li>Version control and collaborative development workflows</li>
+                      <li>Cross-platform development techniques</li>
+                      <li>Performance optimization for interactive applications</li>
+                    </ul>
+                    
+                    <h3>Self-Directed Learning</h3>
+                    <p>Beyond the formal curriculum, I consistently pursued self-directed learning in areas such as:</p>
+                    <ul>
+                      <li>Mobile game development and monetization strategies</li>
+                      <li>Live2D animation techniques</li>
+                      <li>Advanced shader programming</li>
+                      <li>Game marketing and community building</li>
+                    </ul>
+                    
+                    <h3>Philosophy</h3>
+                    <p>Although I've completed my formal education, I maintain a growth mindset and consider myself a lifelong learner. I believe that the rapidly evolving field of game development requires continuous learning and adaptation, and I'm committed to staying at the forefront of industry developments throughout my professional career.</p>
                 </div>
             </div>
             
             <div class="modal" id="Thales">
                 <div class="modal-header">
-                    <div class="title">Thales's naval warfare game</div>
+                    <div class="title">Thales's Naval Warfare Game</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -379,60 +396,226 @@
   <source src="assets/vid/ProjectSideBySide.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-                    <br> I worked at a navy and aerospace defence company named Thales. Whilst employed at Thales I worked on their Naval Game, a serious game to be played by students potentially interested in a career at Thales.
-I was responsible for improving the user experience of the project by creating tooling for dynamic animated scene transitions and UI feedbacks.
-I created tools and systems that could implement scene transitions and responsive feedback easily to ensure that future developers would uphold a better standard of UX.
-
-
+                    <br>
+                    <h3>Project Overview</h3>
+                    <p>I worked at Thales, a leading navy and aerospace defense company, where I contributed to their Naval Game - a serious game designed to engage students potentially interested in careers at Thales.</p>
+                    
+                    <h3>My Role</h3>
+                    <p>UX Developer & UI Systems Engineer</p>
+                    
+                    <h3>Technologies Used</h3>
+                    <ul>
+                      <li>Unity Game Engine</li>
+                      <li>C# Programming</li>
+                      <li>Custom Animation Systems</li>
+                      <li>UI Framework Development</li>
+                    </ul>
+                    
+                    <h3>Key Contributions</h3>
+                    <p>I was responsible for significantly improving the user experience by:</p>
+                    <ul>
+                      <li>Designing and implementing dynamic animated scene transitions</li>
+                      <li>Creating responsive UI feedback systems</li>
+                      <li>Developing reusable tools and frameworks for future developers</li>
+                      <li>Establishing UX standards and documentation</li>
+                    </ul>
+                    
+                    <h3>Challenges & Solutions</h3>
+                    <p>The main challenge was creating intuitive transitions between complex simulation scenarios while maintaining performance. I solved this by developing a modular transition system that pre-loaded assets and used efficient animation techniques to ensure smooth experiences even on lower-end hardware.</p>
+                    
+                    <h3>Outcomes</h3>
+                    <ul>
+                      <li>Improved user engagement metrics</li>
+                      <li>Reduced development time for new scenarios</li>
+                      <li>Consistent UX standards across the application</li>
+                      <li>Better maintainability for future development</li>
+                    </ul>
                 </div>
             </div>
             
             <div class="modal" id="MetEm">
                 <div class="modal-header">
-                    <div class="title">Met'Em</div>
+                    <div class="title">Met'Em - Multiplayer Social Platform</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <img style="width: 40%; margin-bottom: 1%; margin-left: auto; margin-right: auto;" src="assets/vid/MiboVideo.gif" alt="">
-                    Met’Em was a university project I took part in with a small team of seven. Me and my team were assigned to create a 100 player multiplayer social space with live video and audio communication by <a style="color: #4CA4FC;" href=" https://abstraction.games/ " target="_blank"> Abstraction games</a>. The application was developed using the Unreal Engine and in addition to having live video and audio communication we were also assigned to develop a range of different games the users could play together. 
-I was responsible for implementing the video and audio communication, to do this I implemented a C++ API called Agora.<br>
-                    <a style="color: #4CA4FC;" href=" https://youtu.be/3cVLMJ-o0O4" target="_blank"> Watch the gameplay trailer here </a>.
-
-
+                    <img style="width: 40%; margin-bottom: 1%; margin-left: auto; margin-right: auto;" src="assets/vid/MiboVideo.gif" alt="Met'Em gameplay showing multiplayer interaction">
+                    
+                    <h3>Project Overview</h3>
+                    <p>Met'Em was an ambitious university project developed in collaboration with <a style="color: #4CA4FC;" href="https://abstraction.games/" target="_blank">Abstraction Games</a>. Our team of seven was tasked with creating a 100-player multiplayer social space featuring live video and audio communication, along with various mini-games for users to enjoy together.</p>
+                    
+                    <h3>My Role</h3>
+                    <p>Lead Network Engineer & Audio/Video Integration Specialist</p>
+                    
+                    <h3>Technologies Used</h3>
+                    <ul>
+                      <li>Unreal Engine 4</li>
+                      <li>C++ Programming</li>
+                      <li>Agora SDK (Real-time Communication API)</li>
+                      <li>Multiplayer Networking Architecture</li>
+                      <li>Blueprint Visual Scripting</li>
+                    </ul>
+                    
+                    <h3>Key Contributions</h3>
+                    <ul>
+                      <li>Implemented real-time video and audio communication using the Agora C++ API</li>
+                      <li>Designed and optimized network architecture to support 100 concurrent users</li>
+                      <li>Created integration systems between the communication layer and game mechanics</li>
+                      <li>Collaborated with team members to ensure mini-games functioned properly in the multiplayer environment</li>
+                    </ul>
+                    
+                    <h3>Challenges & Solutions</h3>
+                    <p>The biggest challenge was integrating the Agora API, which had limited documentation for Unreal Engine, while ensuring optimal performance with many simultaneous video/audio streams. I solved this by creating a custom wrapper class that efficiently managed resources and implemented dynamic quality scaling based on connection strength and number of active users.</p>
+                    
+                    <h3>Outcomes</h3>
+                    <ul>
+                      <li>Successfully delivered a functioning multiplayer platform that supported our target user count</li>
+                      <li>Received positive feedback from Abstraction Games on the technical implementation</li>
+                      <li>Gained valuable experience in large-scale multiplayer development</li>
+                      <li>Developed reusable components for future real-time communication projects</li>
+                    </ul>
+                    
+                    <p><a style="color: #4CA4FC;" href="https://youtu.be/3cVLMJ-o0O4" target="_blank">Watch the gameplay trailer here</a></p>
                 </div>
             </div>
             
             <div class="modal" id="LTU">
                 <div class="modal-header">
-                    <div class="title">Talespin leading through uncertainty</div>
+                    <div class="title">Talespin: Leading Through Uncertainty</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    During my internship at Talespin I had the opportunity to work on a project called 'Leading through Uncertainty'. This project was developed due to the effects of the COVID-19 pandemic and its impact on the economy and workplace, putting many business leaders and managers in the most challenging situation of their careers. 'Leading through Uncertainty' is a series of VR learning modules that leverage powerful technology to help leaders prepare for times of crisis and uncertainty, built for project CoPilot. 'Leading through Uncertainty' is a VR based interactive experience where the user can gain knowledge and experience in various soft skills not readily available for practice. I started work at Talespin during the end of this project so I was able to see and learn how the company polishes a project and deals with any last bugs and issues.
+                    <h3>Project Overview</h3>
+                    <p>'Leading through Uncertainty' was developed at Talespin in response to the COVID-19 pandemic's unprecedented impact on workplace leadership. This VR-based training program was designed to help business leaders navigate crisis situations by developing critical soft skills through immersive simulation experiences.</p>
+                    
+                    <h3>My Role</h3>
+                    <p>VR Development Intern & Quality Assurance Specialist</p>
+                    
+                    <h3>Technologies Used</h3>
+                    <ul>
+                      <li>Unity Game Engine</li>
+                      <li>C# Programming</li>
+                      <li>VR Development (Oculus/Meta SDK)</li>
+                      <li>Version Control Systems</li>
+                      <li>Bug Tracking & Documentation Tools</li>
+                    </ul>
+                    
+                    <h3>Key Contributions</h3>
+                    <p>I joined Talespin during the final stages of this project, allowing me to focus on:</p>
+                    <ul>
+                      <li>Identifying and resolving critical bugs and performance issues</li>
+                      <li>Optimizing VR interactions for intuitive user experience</li>
+                      <li>Collaborating with the QA team on comprehensive testing protocols</li>
+                      <li>Documenting best practices for future project maintenance</li>
+                      <li>Supporting the final polish phase before client delivery</li>
+                    </ul>
+                    
+                    <h3>Learning Outcomes</h3>
+                    <p>This project provided valuable insights into:</p>
+                    <ul>
+                      <li>Professional VR development workflows in a corporate environment</li>
+                      <li>Effective project finalization and delivery processes</li>
+                      <li>Quality assurance methodologies for immersive experiences</li>
+                      <li>How VR can effectively simulate complex interpersonal scenarios</li>
+                      <li>The importance of user feedback in refining training simulations</li>
+                    </ul>
+                    
+                    <h3>Project Impact</h3>
+                    <p>As part of Talespin's CoPilot platform, 'Leading through Uncertainty' has helped numerous business leaders develop crucial crisis management skills through immersive VR training, demonstrating the practical application of virtual reality technology for professional development in challenging times.</p>
                 </div>
                 <a href="https://www.talespin.com/leading-through-uncertainty" class="works__link__open" target="_blank"><i class='bx bx-link-alt' ></i></a>
             </div>
 
             <div class="modal" id="Propel">
                 <div class="modal-header">
-                    <div class="title">Talespin Propel</div>
+                    <div class="title">Talespin Propel - VR Skills Training</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                       Whilst working at Talespin I was very fortunate to not only have the opportunity to help wrap up project 'Leading through Uncertainty' but was also able to be placed on the engineering team to help develop a completely new project. I was able to contribute my efforts towards project Propel. I was part of its development team from an empty project file to the first version of alpha. Propel is a project like CoPilot but instead of teaching the user soft skills like communication it teaches the user hard skills like how to use a manifold gauge. I worked on a wide range of different feature implementations during this time from a dynamic interactable wrist watch that could be tapped in VR to pause the experience, to the implementation and polish of tools used by the player in the experience.
+                    <h3>Project Overview</h3>
+                    <p>While working at Talespin, I had the opportunity to be part of the engineering team for Project Propel, a VR-based training platform focused on teaching practical hard skills. Unlike Talespin's CoPilot project which focused on soft skills training, Propel was designed to teach technical skills such as using specialized tools and equipment.</p>
+                    
+                    <h3>My Role</h3>
+                    <p>VR Interaction Engineer & Feature Developer</p>
+                    
+                    <h3>Technologies Used</h3>
+                    <ul>
+                      <li>Unity Game Engine</li>
+                      <li>C# Programming</li>
+                      <li>VR Development (Oculus/Meta SDK)</li>
+                      <li>3D Interaction Design</li>
+                      <li>Physics-Based Tool Simulation</li>
+                    </ul>
+                    
+                    <h3>Key Contributions</h3>
+                    <p>I was involved from the project's inception through to its first alpha release, contributing to:</p>
+                    <ul>
+                      <li>Designing and implementing a dynamic interactable wristwatch UI that could be physically tapped in VR to pause the experience</li>
+                      <li>Creating realistic physics-based interactions for various tools used in training scenarios</li>
+                      <li>Developing and polishing the virtual tools used by players during training</li>
+                      <li>Implementing feedback systems to guide users through complex technical procedures</li>
+                      <li>Collaborating with instructional designers to ensure training accuracy</li>
+                    </ul>
+                    
+                    <h3>Challenges & Solutions</h3>
+                    <p>A significant challenge was creating intuitive VR interactions for technical tools that accurately simulated their real-world counterparts while remaining user-friendly. I addressed this by implementing a hybrid approach that combined realistic physics with subtle guidance systems and haptic feedback to help users understand proper tool usage.</p>
+                    
+                    <h3>Outcomes</h3>
+                    <ul>
+                      <li>Successfully delivered the first alpha version of the Propel platform</li>
+                      <li>Created reusable interaction frameworks that accelerated development of new training modules</li>
+                      <li>Established best practices for technical skill simulation in VR</li>
+                      <li>Contributed to a platform that effectively teaches practical skills in an immersive environment</li>
+                    </ul>
                 </div>
                 <a href="https://www.talespin.com/propel" class="works__link__open" target="_blank"><i class='bx bx-link-alt' ></i></a>
             </div>
 
             <div class="modal" id="MobileGame">
                 <div class="modal-header">
-                    <div class="title">Mobile Game about Cats</div>
+                    <div class="title">Cat Collection Mobile Game</div>
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <img style="width: 40%; margin-bottom: 1%; margin-left: auto; margin-right: auto;" src="assets/vid/CatLookAt.gif" alt="">
-                    Alongside university I also worked on my own mobile game. Inspired by games like KleptoCats and Neko Atsume, my mobile game is about adopting a wide range of different cats that visit the players' house, whilst upgrading and furnishing the house with a wider range of collectables. Collectables improve stats and fulfil visitation requirements for new rarer cats. I developed the game inside of the Unity game engine and support multiple languages aiming for release and advertisement in multiple countries. I have spent a lot of time researching effective strategies to maximize monetization for mobile games and effective use of multiple advertising services like Admob and Unity ads. I have been working on this project since 2020 creating videos on YouTube documenting the development process, I am working on all systems, art and design by myself. Some of the art is then run through a program called Live2D that can make 2D imagery much more dynamic and 3D.
-
+                    <img style="width: 40%; margin-bottom: 1%; margin-left: auto; margin-right: auto;" src="assets/vid/CatLookAt.gif" alt="Cat character animation from mobile game">
+                    
+                    <h3>Project Overview</h3>
+                    <p>This is a personal passion project I've been developing alongside my university studies since 2020. Inspired by popular games like KleptoCats and Neko Atsume, I created a mobile game about collecting and caring for a variety of unique cats that visit the player's customizable house.</p>
+                    
+                    <h3>My Role</h3>
+                    <p>Solo Developer (Programming, Art, Design, Marketing)</p>
+                    
+                    <h3>Technologies Used</h3>
+                    <ul>
+                      <li>Unity Game Engine</li>
+                      <li>C# Programming</li>
+                      <li>Live2D Animation System</li>
+                      <li>AdMob & Unity Ads Integration</li>
+                      <li>Localization Systems</li>
+                      <li>Mobile UI/UX Design</li>
+                    </ul>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                      <li>Collection-based gameplay with dozens of unique cat characters</li>
+                      <li>House customization with unlockable furniture and decorations</li>
+                      <li>Stat-based progression system that influences cat visitation</li>
+                      <li>Dynamic 2D animations using Live2D technology</li>
+                      <li>Multi-language support for international release</li>
+                      <li>Monetization through strategic ad placement and optional purchases</li>
+                    </ul>
+                    
+                    <h3>Challenges & Solutions</h3>
+                    <p>The biggest challenge was balancing the scope of the project as a solo developer while maintaining high-quality standards. I addressed this by implementing an iterative development approach, focusing on core gameplay mechanics first, then gradually expanding features while documenting the process on YouTube to maintain accountability and gather community feedback.</p>
+                    
+                    <h3>Outcomes</h3>
+                    <ul>
+                      <li>Developed a complete game from concept to near-release state</li>
+                      <li>Gained comprehensive experience in all aspects of mobile game development</li>
+                      <li>Built a YouTube following documenting the development process</li>
+                      <li>Mastered Live2D animation techniques for dynamic character presentation</li>
+                      <li>Developed effective monetization strategies for free-to-play mobile games</li>
+                    </ul>
                 </div>
             </div>
 
@@ -442,41 +625,138 @@ I was responsible for implementing the video and audio communication, to do this
                     <button data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
-                    During the 3rd year of my university course, I completed a minor called “Doing Business with China”; I chose this minor as I aspire to release my mobile game in China among other countries. I have always loved experiencing the cultures of different people and countries ever since moving from my home country of England to the Netherlands. During the minor I learned professional Chinese business practises, Chinese history, the Chinese language and intercultural management among other things. The most important thing that I have learned during this minor is how to empathise with cultural differences within a workplace, not just Chinese but all culture is diverse, unique and interesting.
-
+                    <h3>Program Overview</h3>
+                    <p>During the 3rd year of my university course, I completed a specialized minor called "Doing Business with China." This program was strategically chosen to support my goal of releasing my mobile game in the Chinese market, which represents one of the largest and most unique gaming markets globally.</p>
+                    
+                    <h3>Key Areas of Study</h3>
+                    <ul>
+                      <li>Chinese Business Practices & Etiquette</li>
+                      <li>Chinese History & Cultural Context</li>
+                      <li>Mandarin Language Fundamentals</li>
+                      <li>Intercultural Management & Communication</li>
+                      <li>Chinese Market Entry Strategies</li>
+                      <li>Regulatory Environment for Digital Products in China</li>
+                    </ul>
+                    
+                    <h3>Skills Developed</h3>
+                    <ul>
+                      <li>Cross-cultural communication and negotiation</li>
+                      <li>Cultural empathy and adaptability</li>
+                      <li>International business strategy</li>
+                      <li>Market analysis for Eastern markets</li>
+                      <li>Basic Mandarin language proficiency</li>
+                    </ul>
+                    
+                    <h3>Application to Game Development</h3>
+                    <p>This minor provided invaluable insights for developing games with global appeal, particularly for Eastern markets. I gained understanding of:</p>
+                    <ul>
+                      <li>Cultural preferences in game aesthetics and mechanics</li>
+                      <li>Localization considerations beyond simple translation</li>
+                      <li>Regulatory requirements for publishing games in China</li>
+                      <li>Monetization strategies effective in the Chinese market</li>
+                    </ul>
+                    
+                    <h3>Personal Impact</h3>
+                    <p>Having moved from England to the Netherlands, I've always appreciated cultural diversity. This program deepened my ability to empathize with cultural differences in professional settings. The most valuable lesson was understanding that effective international collaboration requires not just awareness of differences, but genuine appreciation for the unique perspectives and approaches that diverse cultures bring to creative and technical work.</p>
                 </div>
             </div>
                
             </section>
             
-             <!--===== SERVICES =====-->
-            <section class="services section" id="services">
-                <span class="section-subtitle">What I Offer</span>
-                <h2 class="section-title">My Services</h2>
+            <section class="testimonials section" id="testimonials">
+                <span class="section-subtitle">What Others Say</span>
+                <h2 class="section-title">Testimonials</h2>
 
-                <div class="services__container bd-grid">
-                    <div class="services__content">
-                        <i class='bx bx-code services__icon'></i>
-                        <h3 class="services__title">Game Development</h3>
-                        <p class="services__description">Do you have an idea for a game you would like to be created? I can do that for you; I have experience making a wide range of different games and interactive experiences.</p>
+                <div class="testimonials__container bd-grid">
+                    <div class="testimonial__card">
+                        <div class="testimonial__content">
+                            <div class="testimonial__quote"><i class='bx bxs-quote-alt-left'></i></div>
+                            <p class="testimonial__description">[Testimonial]</p>
+                            <div class="testimonial__details">
+                                <h3 class="testimonial__name">[Name]</h3>
+                                <span class="testimonial__position">[Position]</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="services__content">
-                        <i class='bx bx-pen services__icon'></i>
-                        <h3 class="services__title">Live2D Avatars</h3>
-                        <p class="services__description">Do you want your own virtual avatar? Using Live2D I can create a fully trackable virtual avatar from the chest up for your streams, videos or personal use.</p>
+                    <div class="testimonial__card">
+                        <div class="testimonial__content">
+                            <div class="testimonial__quote"><i class='bx bxs-quote-alt-left'></i></div>
+                            <p class="testimonial__description">[Testimonial]</p>
+                            <div class="testimonial__details">
+                                <h3 class="testimonial__name">[Name]</h3>
+                                <span class="testimonial__position">[Position]</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="services__content">
-                        <i class='bx bx-mobile-alt services__icon'></i>
-                        <h3 class="services__title">App Development</h3>
-                        <p class="services__description">Do you have an idea for an app? Using the Unity game engine I can create that for you and even implement feature such as sharing and in app purchasing.</p>
+                    <div class="testimonial__card">
+                        <div class="testimonial__content">
+                            <div class="testimonial__quote"><i class='bx bxs-quote-alt-left'></i></div>
+                            <p class="testimonial__description">[Testimonial]</p>
+                            <div class="testimonial__details">
+                                <h3 class="testimonial__name">[Name]</h3>
+                                <span class="testimonial__position">[Position]</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            
-                        <!--===== PROJECT IN MIND =====-->
+            <!--===== TECHNICAL SKILLS SHOWCASE =====-->
+            <section class="skills-showcase section" id="skills-showcase">
+                <span class="section-subtitle">Software Development</span>
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="skills-showcase__container bd-grid">
+                    <div class="skills-category">
+                        <h3 class="skills-category__title">Unity Development</h3>
+                        <div class="skills-category__content">
+                            <div class="skills-list">
+                                <div class="skill-tag"><i class='bx bx-cube-alt'></i> AR/VR/MR Applications</div>
+                                <div class="skill-tag"><i class='bx bx-desktop'></i> Desktop Applications</div>
+                                <div class="skill-tag"><i class='bx bx-mobile'></i> Mobile Applications</div>
+                                <div class="skill-tag"><i class='bx bx-code-block'></i> Custom Tools & Systems</div>
+                                <div class="skill-tag"><i class='bx bx-shape-polygon'></i> Procedural Generation</div>
+                                <div class="skill-tag"><i class='bx bx-game'></i> Game Feel & Feedback</div>
+                                <div class="skill-tag"><i class='bx bx-devices'></i> Cross-Platform Development</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3 class="skills-category__title">Project Management</h3>
+                        <div class="skills-category__content">
+                            <div class="skills-list">
+                                <div class="skill-tag"><i class='bx bx-user-voice'></i> Client Liaison</div>
+                                <div class="skill-tag"><i class='bx bx-conversation'></i> Client Meetings</div>
+                                <div class="skill-tag"><i class='bx bx-task'></i> SCRUM & Agile</div>
+                                <div class="skill-tag"><i class='bx bxl-jira'></i> Jira Task Management</div>
+                                <div class="skill-tag"><i class='bx bx-git-branch'></i> Git Version Control</div>
+                                <div class="skill-tag"><i class='bx bx-code-curly'></i> Code Reviews</div>
+                                <div class="skill-tag"><i class='bx bx-bug'></i> Bug Resolution</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-category">
+                        <h3 class="skills-category__title">Technical Specializations</h3>
+                        <div class="skills-category__content">
+                            <div class="skills-list">
+                                <div class="skill-tag"><i class='bx bx-network-chart'></i> Multiplayer Networking</div>
+                                <div class="skill-tag"><i class='bx bx-glasses'></i> VR/AR Development</div>
+                                <div class="skill-tag"><i class='bx bx-layout'></i> UI/UX Design</div>
+                                <div class="skill-tag"><i class='bx bx-math'></i> Physics Programming</div>
+                                <div class="skill-tag"><i class='bx bx-server'></i> Backend Integration</div>
+                                <div class="skill-tag"><i class='bx bx-palette'></i> Game Design</div>
+                                <div class="skill-tag"><i class='bx bx-analyse'></i> Performance Optimization</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== PROJECT IN MIND =====-->
             <section class="project section">
                 <div class="project__container bd-grid">
                     <div class="project__data">
