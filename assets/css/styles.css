@@ -806,8 +806,55 @@ img {
 
 /* ===== WORKS =====*/
 .works__container {
-  justify-items: center;
-  row-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0 1rem;
+  justify-content: flex-start;
+}
+
+.works__img {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 280px;
+  margin-bottom: 1.5rem;
+}
+
+/* Small screens (mobile) */
+@media screen and (max-width: 567px) {
+  .works__container {
+    justify-content: center;
+  }
+  
+  .works__img {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media screen and (min-width: 568px) and (max-width: 991px) {
+  .works__container {
+    justify-content: space-around;
+  }
+  
+  .works__img {
+    width: calc(50% - 1.5rem);
+    max-width: 280px;
+  }
+}
+
+/* Large screens (desktops) */
+@media screen and (min-width: 992px) {
+  .works__container {
+    justify-content: space-between;
+    padding: 0 4rem;
+  }
+  
+  .works__img {
+    width: calc(33.333% - 1.5rem);
+    max-width: 280px;
+  }
 }
 
 .works__img {
@@ -1018,8 +1065,10 @@ img {
 
 .game-image-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
 }
 
 .game-image-container {
@@ -1027,13 +1076,20 @@ img {
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f5f5f5;
 }
 
 .gameplay-image {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  flex: 1;
+  padding: 1rem 0;
+  background-color: #f5f5f5;
 }
 
 .image-caption {
