@@ -16,11 +16,46 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
 
   useEffect(() => {
     console.log('Unity component mounted');
+    console.log('Current window.location:', window.location.href);
     
-    const initializeUnity = () => {
-      if (window.createUnityInstance && canvasRef.current) {
+    const loadUnityScript = () => {
+      return new Promise<void>((resolve, reject) => {
+        if (window.createUnityInstance) {
+          console.log('Unity script already loaded');
+          resolve();
+          return;
+        }
+        
+        const script = document.createElement('script');
+        script.src = "./assets/Build/Builds.loader.js";
+        console.log('Loading Unity script from:', script.src);
+        
+        script.onload = () => {
+          console.log('Unity script loaded successfully');
+          resolve();
+        };
+        
+        script.onerror = () => {
+          console.error('Failed to load Unity script from:', script.src);
+          reject(new Error('Unity script failed to load'));
+        };
+        
+        document.head.appendChild(script);
+      });
+    };
+    
+    const initializeUnity = async () => {
+      try {
+        await loadUnityScript();
+        
+        if (!canvasRef.current) {
+          console.error('Canvas not ready');
+          setTimeout(initializeUnity, 500);
+          return;
+        }
+        
         console.log('Initializing Unity instance...');
-        window.createUnityInstance(canvasRef.current, {
+        const unityInstance = await window.createUnityInstance(canvasRef.current, {
           dataUrl: "./assets/Build/Builds.data",
           frameworkUrl: "./assets/Build/Builds.framework.js",
           codeUrl: "./assets/Build/Builds.wasm",
@@ -28,41 +63,21 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
           companyName: "DefaultCompany",
           productName: "AboutMe portfolio game",
           productVersion: "1.0",
-        }).then((unityInstance: any) => {
-          console.log('Unity instance created successfully');
-          if (fullscreenRef.current) {
-            fullscreenRef.current.onclick = () => {
-              unityInstance.SetFullscreen(1);
-            };
-          }
-        }).catch((error: any) => {
-          console.error('Unity initialization failed:', error);
         });
-      } else if (!window.createUnityInstance) {
-        console.log('createUnityInstance not available, trying to load script dynamically...');
-        // Fallback: load script dynamically if not loaded from HTML
-        const script = document.createElement('script');
-        script.src = "./assets/Build/Builds.loader.js";
-        script.onload = () => {
-          console.log('Unity script loaded dynamically');
-          setTimeout(initializeUnity, 100);
-        };
-        script.onerror = () => {
-          console.error('Failed to load Unity script:', script.src);
-        };
-        document.head.appendChild(script);
-      } else {
-        console.log('Canvas not ready, retrying...');
-        setTimeout(initializeUnity, 500);
+        
+        console.log('Unity instance created successfully');
+        if (fullscreenRef.current) {
+          fullscreenRef.current.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }
+      } catch (error) {
+        console.error('Unity initialization failed:', error);
       }
     };
 
-    // Start initialization after a short delay
-    const timer = setTimeout(initializeUnity, 100);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    // Start initialization
+    initializeUnity();
   }, []);
 
   return (
