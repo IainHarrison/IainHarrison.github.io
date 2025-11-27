@@ -15,25 +15,16 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
   const fullscreenRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Get the correct base URL for GitHub Pages
-    const baseUrl = process.env.PUBLIC_URL || '';
-    console.log('PUBLIC_URL:', process.env.PUBLIC_URL);
-    console.log('Current location:', window.location.href);
-    
-    // Load Unity loader script
-    const script = document.createElement('script');
-    script.src = `${baseUrl}/assets/Build/Builds.loader.js`;
-    console.log('Loading Unity script from:', script.src);
-    script.onload = () => {
-      console.log('Unity loader script loaded successfully');
-      // Use EXACT same Unity initialization code from original HTML
-      if (window.createUnityInstance && canvasRef.current && fullscreenRef.current) {
-        console.log('Initializing Unity with base URL:', baseUrl);
+    // Unity loader script is already loaded in index.html
+    // Wait a bit for script to be ready, then initialize Unity
+    const initializeUnity = () => {
+      if (window.createUnityInstance && canvasRef.current) {
+        console.log('Initializing Unity instance...');
         window.createUnityInstance(canvasRef.current, {
-          dataUrl: `${baseUrl}/assets/Build/Builds.data`,
-          frameworkUrl: `${baseUrl}/assets/Build/Builds.framework.js`,
-          codeUrl: `${baseUrl}/assets/Build/Builds.wasm`,
-          streamingAssetsUrl: `${baseUrl}/assets/StreamingAssets`,
+          dataUrl: "assets/Build/Builds.data",
+          frameworkUrl: "assets/Build/Builds.framework.js",
+          codeUrl: "assets/Build/Builds.wasm",
+          streamingAssetsUrl: "assets/StreamingAssets",
           companyName: "DefaultCompany",
           productName: "AboutMe portfolio game",
           productVersion: "1.0",
@@ -48,20 +39,17 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
           console.error('Unity initialization failed:', error);
         });
       } else {
-        console.error('Unity initialization failed: missing dependencies');
+        console.error('Unity initialization failed: createUnityInstance not available or canvas not ready');
+        // Retry after a short delay
+        setTimeout(initializeUnity, 500);
       }
     };
-    
-    script.onerror = () => {
-      console.error('Failed to load Unity loader script:', script.src);
-    };
-    document.head.appendChild(script);
+
+    // Start initialization after a short delay to ensure everything is ready
+    const timer = setTimeout(initializeUnity, 100);
 
     return () => {
-      // Cleanup script on unmount
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
+      clearTimeout(timer);
     };
   }, []);
 
@@ -73,6 +61,7 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
         <div className="game-controls">
           <div 
             ref={fullscreenRef}
+            id="fullScreen"
             style={{
               textAlign: 'center',
               color: '#486F9E',
