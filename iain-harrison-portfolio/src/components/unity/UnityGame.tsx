@@ -15,16 +15,17 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
   const fullscreenRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Unity loader script is already loaded in index.html
-    // Wait a bit for script to be ready, then initialize Unity
+    const baseUrl = process.env.PUBLIC_URL || '';
+    console.log('Unity component mounted, PUBLIC_URL:', baseUrl);
+    
     const initializeUnity = () => {
       if (window.createUnityInstance && canvasRef.current) {
-        console.log('Initializing Unity instance...');
+        console.log('Initializing Unity instance with baseUrl:', baseUrl);
         window.createUnityInstance(canvasRef.current, {
-          dataUrl: "/assets/Build/Builds.data",
-          frameworkUrl: "/assets/Build/Builds.framework.js",
-          codeUrl: "/assets/Build/Builds.wasm",
-          streamingAssetsUrl: "/assets/StreamingAssets",
+          dataUrl: `${baseUrl}/assets/Build/Builds.data`,
+          frameworkUrl: `${baseUrl}/assets/Build/Builds.framework.js`,
+          codeUrl: `${baseUrl}/assets/Build/Builds.wasm`,
+          streamingAssetsUrl: `${baseUrl}/assets/StreamingAssets`,
           companyName: "DefaultCompany",
           productName: "AboutMe portfolio game",
           productVersion: "1.0",
@@ -38,14 +39,26 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
         }).catch((error: any) => {
           console.error('Unity initialization failed:', error);
         });
+      } else if (!window.createUnityInstance) {
+        console.log('createUnityInstance not available, trying to load script dynamically...');
+        // Fallback: load script dynamically if not loaded from HTML
+        const script = document.createElement('script');
+        script.src = `${baseUrl}/assets/Build/Builds.loader.js`;
+        script.onload = () => {
+          console.log('Unity script loaded dynamically');
+          setTimeout(initializeUnity, 100);
+        };
+        script.onerror = () => {
+          console.error('Failed to load Unity script:', script.src);
+        };
+        document.head.appendChild(script);
       } else {
-        console.error('Unity initialization failed: createUnityInstance not available or canvas not ready');
-        // Retry after a short delay
+        console.log('Canvas not ready, retrying...');
         setTimeout(initializeUnity, 500);
       }
     };
 
-    // Start initialization after a short delay to ensure everything is ready
+    // Start initialization after a short delay
     const timer = setTimeout(initializeUnity, 100);
 
     return () => {
