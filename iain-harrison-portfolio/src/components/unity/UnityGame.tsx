@@ -15,28 +15,45 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
   const fullscreenRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Get the correct base URL for GitHub Pages
+    const baseUrl = process.env.PUBLIC_URL || '';
+    console.log('PUBLIC_URL:', process.env.PUBLIC_URL);
+    console.log('Current location:', window.location.href);
+    
     // Load Unity loader script
     const script = document.createElement('script');
-    script.src = '/assets/Build/Builds.loader.js';
+    script.src = `${baseUrl}/assets/Build/Builds.loader.js`;
+    console.log('Loading Unity script from:', script.src);
     script.onload = () => {
+      console.log('Unity loader script loaded successfully');
       // Use EXACT same Unity initialization code from original HTML
       if (window.createUnityInstance && canvasRef.current && fullscreenRef.current) {
+        console.log('Initializing Unity with base URL:', baseUrl);
         window.createUnityInstance(canvasRef.current, {
-          dataUrl: "/assets/Build/Builds.data",
-          frameworkUrl: "/assets/Build/Builds.framework.js",
-          codeUrl: "/assets/Build/Builds.wasm",
-          streamingAssetsUrl: "/assets/StreamingAssets",
+          dataUrl: `${baseUrl}/assets/Build/Builds.data`,
+          frameworkUrl: `${baseUrl}/assets/Build/Builds.framework.js`,
+          codeUrl: `${baseUrl}/assets/Build/Builds.wasm`,
+          streamingAssetsUrl: `${baseUrl}/assets/StreamingAssets`,
           companyName: "DefaultCompany",
           productName: "AboutMe portfolio game",
           productVersion: "1.0",
         }).then((unityInstance: any) => {
+          console.log('Unity instance created successfully');
           if (fullscreenRef.current) {
             fullscreenRef.current.onclick = () => {
               unityInstance.SetFullscreen(1);
             };
           }
+        }).catch((error: any) => {
+          console.error('Unity initialization failed:', error);
         });
+      } else {
+        console.error('Unity initialization failed: missing dependencies');
       }
+    };
+    
+    script.onerror = () => {
+      console.error('Failed to load Unity loader script:', script.src);
     };
     document.head.appendChild(script);
 
