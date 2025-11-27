@@ -15,17 +15,16 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
   const fullscreenRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const baseUrl = process.env.PUBLIC_URL || '';
-    console.log('Unity component mounted, PUBLIC_URL:', baseUrl);
+    console.log('Unity component mounted');
     
     const initializeUnity = () => {
       if (window.createUnityInstance && canvasRef.current) {
-        console.log('Initializing Unity instance with baseUrl:', baseUrl);
+        console.log('Initializing Unity instance...');
         window.createUnityInstance(canvasRef.current, {
-          dataUrl: `${baseUrl}/assets/Build/Builds.data`,
-          frameworkUrl: `${baseUrl}/assets/Build/Builds.framework.js`,
-          codeUrl: `${baseUrl}/assets/Build/Builds.wasm`,
-          streamingAssetsUrl: `${baseUrl}/assets/StreamingAssets`,
+          dataUrl: "./assets/Build/Builds.data",
+          frameworkUrl: "./assets/Build/Builds.framework.js",
+          codeUrl: "./assets/Build/Builds.wasm",
+          streamingAssetsUrl: "./assets/StreamingAssets",
           companyName: "DefaultCompany",
           productName: "AboutMe portfolio game",
           productVersion: "1.0",
@@ -43,7 +42,7 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
         console.log('createUnityInstance not available, trying to load script dynamically...');
         // Fallback: load script dynamically if not loaded from HTML
         const script = document.createElement('script');
-        script.src = `${baseUrl}/assets/Build/Builds.loader.js`;
+        script.src = "./assets/Build/Builds.loader.js";
         script.onload = () => {
           console.log('Unity script loaded dynamically');
           setTimeout(initializeUnity, 100);
