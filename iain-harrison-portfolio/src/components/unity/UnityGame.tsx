@@ -21,10 +21,10 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
       if (window.createUnityInstance && canvasRef.current) {
         console.log('Initializing Unity instance...');
         window.createUnityInstance(canvasRef.current, {
-          dataUrl: "assets/Build/Builds.data",
-          frameworkUrl: "assets/Build/Builds.framework.js",
-          codeUrl: "assets/Build/Builds.wasm",
-          streamingAssetsUrl: "assets/StreamingAssets",
+          dataUrl: "/assets/Build/Builds.data",
+          frameworkUrl: "/assets/Build/Builds.framework.js",
+          codeUrl: "/assets/Build/Builds.wasm",
+          streamingAssetsUrl: "/assets/StreamingAssets",
           companyName: "DefaultCompany",
           productName: "AboutMe portfolio game",
           productVersion: "1.0",
