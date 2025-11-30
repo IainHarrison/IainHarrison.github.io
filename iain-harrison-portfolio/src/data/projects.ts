@@ -7,6 +7,7 @@ export const projects: Project[] = [
     image: "/assets/img/work13.jpg",
     description: "Unity-based platform for visualizing major infrastructure projects in 360° environments",
     technologies: ["Unity", "VR", "Three.js", "CycloMedia API"],
+    categories: ['professional', 'vr'],
     links: {},
     details: {
       overview: "The Dusseldorp Project is a large-scale Unity-based platform designed to visualize major infrastructure projects — such as new buildings, parking structures, and park renovations — within 360-degree photographic environments.",
@@ -32,6 +33,7 @@ export const projects: Project[] = [
     image: "/assets/img/work10.jpg", 
     description: "Puzzle game created during Global Game Jam 2025 - Winner of Best Game & Best Mechanic",
     technologies: ["Unity", "WebGL", "Game Design"],
+    categories: ['games'],
     links: {
       itchio: "https://iainharrison.itch.io/the-fragile-journey"
     },
@@ -64,6 +66,7 @@ export const projects: Project[] = [
     image: "/assets/img/work12.jpg",
     description: "Powerful desktop and mobile ecosystem for visualizing 3D CAD models in real time",
     technologies: ["Unity", "AR", "Mobile Development", "CAD Integration"],
+    categories: ['professional', 'mobile'],
     links: {},
     details: {
       overview: "The 3DX Platform is a powerful desktop and mobile ecosystem built to visualize and animate 3D CAD models in real time for a variety of business clients. It includes a Unity-based editor for desktop environments and a companion mobile AR app for real-world visualization.",
@@ -90,6 +93,7 @@ export const projects: Project[] = [
     image: "/assets/img/work11.jpg",
     description: "Puzzle-platformer created during XP Game Jam - Winner of Best Game & Best Mechanic",
     technologies: ["Unity", "WebGL", "Game Design"],
+    categories: ['games'],
     links: {
       itchio: "https://iainharrison.itch.io/puzzle-bugs"
     },
@@ -121,6 +125,7 @@ export const projects: Project[] = [
     image: "/assets/img/work7.jpg",
     description: "BSc in Creative Media and Game Technologies - Graduated with 8.1/10 (First Class Honours)",
     technologies: ["Unity", "C#", "Game Design", "3D Modeling"],
+    categories: ['education'],
     links: {},
     details: {
       overview: "On July 12, 2022, I graduated from Saxion University of Applied Sciences with a Bachelor of Science in Creative Media and Game Technologies, achieving a score of 8.1/10 (equivalent to First Class Honours).",
@@ -146,6 +151,7 @@ export const projects: Project[] = [
     image: "/assets/img/work8.jpg",
     description: "Naval Warfare Game - UX Developer & UI Systems Engineer",
     technologies: ["Unity", "C#", "UI Systems", "Animation"],
+    categories: ['professional'],
     links: {},
     details: {
       overview: "I worked at Thales, a leading navy and aerospace defense company, where I contributed to their Naval Game - a serious game designed to engage students potentially interested in careers at Thales.",
@@ -172,6 +178,7 @@ export const projects: Project[] = [
     image: "/assets/img/work9.jpg",
     description: "Multiplayer Social Platform - 100-player multiplayer with live video/audio",
     technologies: ["Unreal Engine", "C++", "Agora SDK", "Networking"],
+    categories: ['professional'],
     links: {
       external: "https://youtu.be/3cVLMJ-o0O4"
     },
@@ -200,6 +207,7 @@ export const projects: Project[] = [
     image: "/assets/img/work2.jpg",
     description: "Cat Collection Mobile Game - Personal passion project developed since 2020",
     technologies: ["Unity", "C#", "Live2D", "Mobile Development"],
+    categories: ['mobile'],
     links: {},
     details: {
       overview: "This is a personal passion project I've been developing alongside my university studies since 2020. Inspired by popular games like KleptoCats and Neko Atsume, I created a mobile game about collecting and caring for a variety of unique cats that visit the player's customizable house.",
@@ -227,6 +235,7 @@ export const projects: Project[] = [
     image: "/assets/img/work3.jpg",
     description: "Fly By - Game created for Global Game Jam",
     technologies: ["Unity", "Game Design", "Rapid Prototyping"],
+    categories: ['games'],
     links: {
       itchio: "https://iainharrison.itch.io/fly-by"
     },
@@ -252,6 +261,7 @@ export const projects: Project[] = [
     image: "/assets/img/work4.jpg",
     description: "VR Skills Training - VR-based training platform for technical skills",
     technologies: ["Unity", "VR", "C#", "Physics Simulation"],
+    categories: ['vr', 'professional'],
     links: {
       external: "https://www.talespin.com/propel"
     },
@@ -279,6 +289,7 @@ export const projects: Project[] = [
     image: "/assets/img/work5.jpg",
     description: "Personal challenge to create games rapidly and consistently",
     technologies: ["Unity", "Rapid Prototyping", "Game Design"],
+    categories: ['games'],
     links: {
       external: "https://www.linkedin.com/feed/update/urn:li:activity:6729112015492788225/?commentUrn=urn%3Ali%3Acomment%3A(activity%3A6728712887650652160%2C6729111797380591616)"
     },
@@ -306,6 +317,7 @@ export const projects: Project[] = [
     image: "/assets/img/work6.jpg",
     description: "Leading Through Uncertainty - VR training for crisis leadership during COVID-19",
     technologies: ["Unity", "VR", "C#", "Quality Assurance"],
+    categories: ['vr', 'professional'],
     links: {
       external: "https://www.talespin.com/leading-through-uncertainty"
     },

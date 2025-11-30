@@ -1,18 +1,18 @@
 import React from 'react';
-import { testimonialsData } from '../../data/testimonials';
-import TestimonialCard from '../ui/TestimonialCard';
+import TestimonialCarousel from '../ui/TestimonialCarousel';
+import { Animate } from '../animations/ScrollAnimations';
 
 const Testimonials: React.FC = () => {
   return (
     <section className="testimonials section" id="testimonials">
-      <span className="section-subtitle">What Others Say</span>
-      <h2 className="section-title">Testimonials</h2>
+      <Animate.SlideUp>
+        <span className="section-subtitle">What Others Say</span>
+      </Animate.SlideUp>
+      <Animate.SlideUp delay={200}>
+        <h2 className="section-title">Testimonials</h2>
+      </Animate.SlideUp>
 
-      <div className="testimonials__container bd-grid">
-        {testimonialsData.map((testimonial, index) => (
-          <TestimonialCard key={index} testimonial={testimonial} />
-        ))}
-      </div>
+      <TestimonialCarousel />
     </section>
   );
 };

@@ -4,6 +4,7 @@ export interface Project {
   image: string;
   description: string;
   technologies: string[];
+  categories: ('games' | 'vr' | 'mobile' | 'web' | 'professional' | 'education')[];
   links: {
     demo?: string;
     github?: string;

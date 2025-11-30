@@ -1,0 +1,61 @@
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float linear infinite;
+}
+
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #486F9E, #6B9BD2);
+  border-radius: 50%;
+}
+
+.shape-2 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #6B9BD2, #8BB5E8);
+  transform: rotate(45deg);
+}
+
+.shape-3 {
+  width: 100px;
+  height: 40px;
+  background: linear-gradient(45deg, #8BB5E8, #486F9E);
+  border-radius: 50px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .shape-1 { width: 60px; height: 60px; }
+  .shape-2 { width: 45px; height: 45px; }
+  .shape-3 { width: 75px; height: 30px; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .floating-shape {
+    animation: none;
+    opacity: 0.05;
+  }
+}
