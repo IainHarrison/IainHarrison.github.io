@@ -93,6 +93,7 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
               textAlign: 'center',
               color: '#486F9E',
               height: '20px',
+              width: '%UNITY_WIDTH%px',
               cursor: 'pointer'
             }}
           >

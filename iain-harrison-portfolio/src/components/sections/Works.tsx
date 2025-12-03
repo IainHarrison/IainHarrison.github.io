@@ -30,6 +30,12 @@ const Works: React.FC = () => {
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
+    
+    // Emit custom event for background system
+    const event = new CustomEvent('worksFilterChange', {
+      detail: { category }
+    });
+    window.dispatchEvent(event);
   };
 
   // Filter projects based on active category

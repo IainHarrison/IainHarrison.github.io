@@ -9,11 +9,13 @@ import Testimonials from './components/sections/Testimonials';
 import SkillsShowcase from './components/sections/SkillsShowcase';
 import ProjectInMind from './components/sections/ProjectInMind';
 import Contact from './components/sections/Contact';
+import SectionBackground from './components/animations/SectionBackground';
 import './styles/styles.css';
 
 function App() {
   return (
     <div className="App">
+      <SectionBackground />
       <Header />
       <main className="l-main">
         <Hero />
