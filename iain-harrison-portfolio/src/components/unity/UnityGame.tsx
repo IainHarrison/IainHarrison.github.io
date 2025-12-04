@@ -27,9 +27,7 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
         }
         
         const script = document.createElement('script');
-        script.src = process.env.NODE_ENV === 'production' 
-          ? "https://iainharrison.github.io/Build/Builds.loader.js"
-          : "./assets/Build/Builds.loader.js";
+        script.src = "./Build/Builds.loader.js";
         console.log('Loading Unity script from:', script.src);
         
         script.onload = () => {
@@ -57,17 +55,11 @@ const UnityGame: React.FC<UnityGameProps> = ({ className }) => {
         }
         
         console.log('Initializing Unity instance...');
-        const basePath = process.env.NODE_ENV === 'production' 
-          ? "https://iainharrison.github.io/Build/"
-          : "./assets/Build/";
-        
         const unityInstance = await window.createUnityInstance(canvasRef.current, {
-          dataUrl: `${basePath}Builds.data`,
-          frameworkUrl: `${basePath}Builds.framework.js`,
-          codeUrl: `${basePath}Builds.wasm`,
-          streamingAssetsUrl: process.env.NODE_ENV === 'production' 
-            ? "https://iainharrison.github.io/StreamingAssets"
-            : "./assets/StreamingAssets",
+          dataUrl: "./Build/Builds.data",
+          frameworkUrl: "./Build/Builds.framework.js",
+          codeUrl: "./Build/Builds.wasm",
+          streamingAssetsUrl: "./StreamingAssets",
           companyName: "DefaultCompany",
           productName: "AboutMe portfolio game",
           productVersion: "1.0",
