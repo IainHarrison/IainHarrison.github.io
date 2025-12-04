@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
+import '../../styles/styles.css';
+import { useMouseAvoidance } from '../../hooks/useMouseAvoidance';
 
 interface SectionBackgroundProps {
   className?: string;
@@ -9,6 +11,9 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
   const [worksCategory, setWorksCategory] = useState('all');
   const observerRef = useRef<IntersectionObserver | null>(null);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Mouse avoidance for all projects elements
+  useMouseAvoidance('.all-projects-world-effect', '.all-element');
 
   // Debounced section change to prevent rapid switching
   const debouncedSetActiveSection = useCallback((newSection: string) => {
@@ -315,38 +320,38 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
       case 'professional':
         return {
           ...baseConfig,
-          gradient: 'linear-gradient(45deg, #1e40af 0%, #3b82f6 30%, #60a5fa 70%, #93c5fd 100%)',
-          special: 'professional-particles'
+          gradient: 'linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 25%, #f9fafb 50%, #ffffff 75%, #f8fafc 100%)',
+          special: 'professional-world'
         };
       case 'games':
         return {
           ...baseConfig,
-          gradient: 'linear-gradient(45deg, #7c3aed 0%, #a855f7 30%, #c084fc 70%, #ddd6fe 100%)',
-          special: 'game-particles'
+          gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #3730a3 50%, #1e40af 75%, #1d4ed8 100%)',
+          special: 'games-world'
         };
       case 'vr':
         return {
           ...baseConfig,
-          gradient: 'linear-gradient(45deg, #dc2626 0%, #ef4444 30%, #f87171 70%, #fca5a5 100%)',
-          special: 'vr-particles'
+          gradient: 'linear-gradient(135deg, #0c4a6e 0%, #0369a1 25%, #0284c7 50%, #0ea5e9 75%, #38bdf8 100%)',
+          special: 'vr-world'
         };
       case 'mobile':
         return {
           ...baseConfig,
-          gradient: 'linear-gradient(45deg, #059669 0%, #10b981 30%, #34d399 70%, #6ee7b7 100%)',
-          special: 'mobile-particles'
+          gradient: '#e9d5ff',
+          special: 'mobile-world'
         };
       case 'education':
         return {
           ...baseConfig,
-          gradient: 'linear-gradient(45deg, #d97706 0%, #f59e0b 30%, #fbbf24 70%, #fde047 100%)',
-          special: 'education-particles'
+          gradient: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 25%, #fed7aa 50%, #fecaca 75%, #fef2f2 100%)',
+          special: 'education-world'
         };
       default: // 'all'
         return {
           ...baseConfig,
-          gradient: 'linear-gradient(45deg, #ecfdf5 0%, #d1fae5 30%, #a7f3d0 70%, #6ee7b7 100%)',
-          special: 'color-shift'
+          gradient: '#f0f9ff',
+          special: 'all-projects-world'
         };
     }
   };
@@ -656,6 +661,553 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   animationDelay: `${Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {config.special === 'games-world' && (
+        <div className="games-world-effect">
+          {/* Floating pixel particles */}
+          <div className="pixel-particles">
+            {Array.from({ length: 20 }, (_, i) => (
+              <div
+                key={`pixel-${i}`}
+                className="pixel-particle"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 4}s`,
+                  animationDuration: `${3 + Math.random() * 2}s`
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Matrix grid overlay */}
+          <div className="matrix-grid">
+            {Array.from({ length: 8 }, (_, row) => (
+              <div key={`grid-row-${row}`} className="grid-row">
+                {Array.from({ length: 12 }, (_, col) => (
+                  <div
+                    key={`grid-cell-${row}-${col}`}
+                    className="grid-cell"
+                    style={{
+                      animationDelay: `${(row + col) * 0.1}s`
+                    }}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+          
+          {/* Power-up sparkles */}
+          <div className="power-up-sparkles">
+            {Array.from({ length: 8 }, (_, i) => (
+              <div
+                key={`sparkle-${i}`}
+                className="sparkle"
+                style={{
+                  left: `${10 + Math.random() * 80}%`,
+                  top: `${10 + Math.random() * 80}%`,
+                  animationDelay: `${Math.random() * 3}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {config.special === 'vr-world' && (
+        <div className="vr-world-effect">
+          {/* Floating wireframe shapes */}
+          <div className="wireframe-shapes">
+            {Array.from({ length: 12 }, (_, i) => (
+              <div
+                key={`wireframe-${i}`}
+                className={`wireframe-shape shape-${(i % 4) + 1}`}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${4 + Math.random() * 2}s`
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Tron-style grid */}
+          <div className="tron-grid">
+            <div className="grid-lines horizontal">
+              {Array.from({ length: 10 }, (_, i) => (
+                <div
+                  key={`h-line-${i}`}
+                  className="grid-line"
+                  style={{
+                    animationDelay: `${i * 0.2}s`
+                  }}
+                />
+              ))}
+            </div>
+            <div className="grid-lines vertical">
+              {Array.from({ length: 15 }, (_, i) => (
+                <div
+                  key={`v-line-${i}`}
+                  className="grid-line"
+                  style={{
+                    animationDelay: `${i * 0.15}s`
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Holographic particles */}
+          <div className="holographic-particles">
+            {Array.from({ length: 15 }, (_, i) => (
+              <div
+                key={`holo-${i}`}
+                className="holo-particle"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 2}s`
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* VR Assets - Floating Icons */}
+          <div className="vr-assets">
+            {/* VR Headset Icons */}
+            {Array.from({ length: 3 }, (_, i) => (
+              <div
+                key={`vr-headset-${i}`}
+                className="vr-asset vr-headset"
+                style={{
+                  left: `${20 + Math.random() * 60}%`,
+                  top: `${20 + Math.random() * 60}%`,
+                  animationDelay: `${Math.random() * 4}s`
+                }}
+              >
+                <i className="bx bx-cube"></i>
+              </div>
+            ))}
+            
+            {/* VR Controller Icons */}
+            {Array.from({ length: 2 }, (_, i) => (
+              <div
+                key={`vr-controller-${i}`}
+                className="vr-asset vr-controller"
+                style={{
+                  left: `${10 + Math.random() * 80}%`,
+                  top: `${30 + Math.random() * 40}%`,
+                  animationDelay: `${1 + Math.random() * 3}s`
+                }}
+              >
+                <i className="bx bx-joystick"></i>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {config.special === 'mobile-world' && (
+        <div className="mobile-world-effect">
+          {/* Bouncing Mobile Devices */}
+          <div className="mobile-devices">
+            {Array.from({ length: 4 }, (_, i) => (
+              <div
+                key={`mobile-${i}`}
+                className="mobile-device"
+                style={{
+                  left: `${15 + Math.random() * 70}%`,
+                  top: `${20 + Math.random() * 60}%`,
+                  animationDelay: `${Math.random() * 2}s`,
+                  animationDuration: `${2 + Math.random() * 1}s`
+                }}
+              >
+                <i className="bx bx-mobile-alt"></i>
+              </div>
+            ))}
+          </div>
+          
+          {/* App Icon Squares with Wobble */}
+          <div className="app-icons">
+            {Array.from({ length: 12 }, (_, i) => (
+              <div
+                key={`app-${i}`}
+                className={`app-icon app-${(i % 4) + 1}`}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Notification Bubbles */}
+          <div className="notification-bubbles">
+            {Array.from({ length: 8 }, (_, i) => (
+              <div
+                key={`notification-${i}`}
+                className="notification-bubble"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 4}s`
+                }}
+              >
+                {Math.floor(Math.random() * 9) + 1}
+              </div>
+            ))}
+          </div>
+          
+          {/* Floating UI Elements */}
+          <div className="ui-elements">
+            {Array.from({ length: 6 }, (_, i) => (
+              <div
+                key={`ui-${i}`}
+                className={`ui-element ui-${(i % 3) + 1}`}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 2.5}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {config.special === 'professional-world' && (
+        <div className="professional-world-effect">
+          {/* Sine Wave Business Icons */}
+          <div className="business-icons">
+            {Array.from({ length: 12 }, (_, i) => {
+              const iconTypes = ['briefcase', 'chart', 'document', 'money'];
+              const weights = [0.4, 0.3, 0.2, 0.1]; // 40%, 30%, 20%, 10%
+              
+              let iconType = 'briefcase';
+              const random = Math.random();
+              let cumulative = 0;
+              
+              for (let j = 0; j < weights.length; j++) {
+                cumulative += weights[j];
+                if (random < cumulative) {
+                  iconType = iconTypes[j];
+                  break;
+                }
+              }
+              
+              const iconClass = iconType === 'money' ? 'money-icon' : `${iconType}-icon`;
+              const iconName = iconType === 'money' ? 'bx-dollar-circle' : 
+                              iconType === 'briefcase' ? 'bx-briefcase' :
+                              iconType === 'chart' ? 'bx-bar-chart-alt-2' : 'bx-file-blank';
+              
+              return (
+                <div
+                  key={`business-${i}`}
+                  className={`business-icon sine-wave-icon ${iconClass}`}
+                  style={{
+                    animationDelay: `${i * 0.3}s`,
+                    '--wave-index': i,
+                    '--total-icons': 12
+                  } as React.CSSProperties}
+                >
+                  <i className={`bx ${iconName}`}></i>
+                </div>
+              );
+            })}
+          </div>
+          
+          {/* Corporate Geometric Patterns */}
+          <div className="corporate-patterns">
+            {Array.from({ length: 8 }, (_, i) => (
+              <div
+                key={`pattern-${i}`}
+                className={`corporate-shape shape-${(i % 3) + 1}`}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Elegant Connecting Lines */}
+          <div className="connection-lines">
+            {Array.from({ length: 5 }, (_, i) => (
+              <div
+                key={`line-${i}`}
+                className="connection-line"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  transform: `rotate(${Math.random() * 360}deg)`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {config.special === 'education-world' && (
+        <div className="education-world-effect">
+          {/* Floating Educational Icons */}
+          <div className="educational-icons">
+            {/* Books */}
+            {Array.from({ length: 4 }, (_, i) => (
+              <div
+                key={`book-${i}`}
+                className="educational-icon book-icon"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`
+                }}
+              >
+                <i className="bx bx-book-open"></i>
+              </div>
+            ))}
+            
+            {/* Graduation Caps */}
+            {Array.from({ length: 3 }, (_, i) => (
+              <div
+                key={`grad-${i}`}
+                className="educational-icon graduation-icon"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${1 + Math.random() * 2}s`
+                }}
+              >
+                <i className="bx bx-graduation"></i>
+              </div>
+            ))}
+            
+            {/* Pencils/Writing */}
+            {Array.from({ length: 3 }, (_, i) => (
+              <div
+                key={`pencil-${i}`}
+                className="educational-icon pencil-icon"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${0.5 + Math.random() * 2.5}s`
+                }}
+              >
+                <i className="bx bx-pencil"></i>
+              </div>
+            ))}
+            
+            {/* Lightbulbs (Ideas) */}
+            {Array.from({ length: 2 }, (_, i) => (
+              <div
+                key={`idea-${i}`}
+                className="educational-icon idea-icon"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${1.5 + Math.random() * 2}s`
+                }}
+              >
+                <i className="bx bx-bulb"></i>
+              </div>
+            ))}
+          </div>
+          
+          {/* Knowledge Particles */}
+          <div className="knowledge-particles">
+            {Array.from({ length: 15 }, (_, i) => (
+              <div
+                key={`knowledge-${i}`}
+                className="knowledge-particle"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Academic Papers */}
+          <div className="academic-papers">
+            {Array.from({ length: 6 }, (_, i) => (
+              <div
+                key={`paper-${i}`}
+                className="academic-paper"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {config.special === 'all-projects-world' && (
+        <div className="all-projects-world-effect">
+          {/* Sine Wave Professional Elements */}
+          <div className="all-sine-wave-elements">
+            {Array.from({ length: 8 }, (_, i) => {
+              const iconTypes = ['briefcase', 'chart', 'document', 'money'];
+              const iconType = iconTypes[i % iconTypes.length];
+              const iconName = iconType === 'money' ? 'bx-dollar-circle' : 
+                              iconType === 'briefcase' ? 'bx-briefcase' :
+                              iconType === 'chart' ? 'bx-bar-chart-alt-2' : 'bx-file-blank';
+              
+              return (
+                <div
+                  key={`sine-${i}`}
+                  className="all-element all-sine-wave-icon"
+                  style={{
+                    '--wave-index': i,
+                    '--total-icons': 8,
+                    animationDelay: `${i * 0.4}s`
+                  } as React.CSSProperties}
+                >
+                  <i className={`bx ${iconName}`}></i>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* VR 3D Rotating Elements */}
+          <div className="all-vr-3d-elements">
+            {Array.from({ length: 4 }, (_, i) => (
+              <div
+                key={`vr-3d-${i}`}
+                className="all-element all-vr-3d-element"
+                style={{
+                  left: `${20 + Math.random() * 60}%`,
+                  top: `${20 + Math.random() * 60}%`,
+                  animationDelay: `${Math.random() * 3}s`
+                }}
+              >
+                <i className="bx bx-cube"></i>
+              </div>
+            ))}
+            
+            {Array.from({ length: 2 }, (_, i) => (
+              <div
+                key={`vr-controller-3d-${i}`}
+                className="all-element all-vr-controller-element"
+                style={{
+                  left: `${15 + Math.random() * 70}%`,
+                  top: `${25 + Math.random() * 50}%`,
+                  animationDelay: `${1 + Math.random() * 2}s`
+                }}
+              >
+                <i className="bx bx-joystick"></i>
+              </div>
+            ))}
+          </div>
+
+          {/* Games Pixel Effects */}
+          <div className="all-games-effects">
+            {/* Pixel Particles from Games */}
+            <div className="all-pixel-particles">
+              {Array.from({ length: 15 }, (_, i) => (
+                <div
+                  key={`all-pixel-${i}`}
+                  className="all-element all-pixel-particle"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 4}s`,
+                    animationDuration: `${3 + Math.random() * 2}s`
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Games Joysticks */}
+            {Array.from({ length: 3 }, (_, i) => (
+              <div
+                key={`games-spin-${i}`}
+                className="all-element all-games-element"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 2}s`
+                }}
+              >
+                <i className="bx bx-joystick"></i>
+              </div>
+            ))}
+          </div>
+
+          {/* VR Wireframe Effects */}
+          <div className="all-vr-effects">
+            {/* Wireframe Shapes from VR */}
+            <div className="all-wireframe-shapes">
+              {Array.from({ length: 8 }, (_, i) => (
+                <div
+                  key={`all-wireframe-${i}`}
+                  className={`all-element all-wireframe-shape all-shape-${(i % 4) + 1}`}
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    animationDelay: `${Math.random() * 3}s`,
+                    animationDuration: `${4 + Math.random() * 2}s`
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+            
+          {/* Other Category Elements */}
+          <div className="all-other-elements">
+            {/* Mobile Bouncing */}
+            {Array.from({ length: 3 }, (_, i) => (
+              <div
+                key={`mobile-bounce-${i}`}
+                className="all-element all-mobile-element"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 2}s`
+                }}
+              >
+                <i className="bx bx-mobile-alt"></i>
+              </div>
+            ))}
+            
+            {/* Education Floating */}
+            {Array.from({ length: 2 }, (_, i) => (
+              <div
+                key={`education-float-${i}`}
+                className="all-element all-education-element"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 2}s`
+                }}
+              >
+                <i className="bx bx-book-open"></i>
+              </div>
+            ))}
+          </div>
+
+          {/* Mixed Particles */}
+          <div className="all-particles">
+            {Array.from({ length: 15 }, (_, i) => (
+              <div
+                key={`all-particle-${i}`}
+                className={`all-element all-particle particle-${(i % 5) + 1}`}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`
                 }}
               />
             ))}
