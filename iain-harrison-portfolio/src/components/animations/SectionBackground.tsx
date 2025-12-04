@@ -88,7 +88,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
         clearTimeout(debounceRef.current);
       }
     };
-  }, []); // No dependencies - create once and reuse
+  }, [activeSection, debouncedSetActiveSection]); // Include dependencies used in handleIntersection
 
   // Scroll position fallback for edge cases
   useEffect(() => {
