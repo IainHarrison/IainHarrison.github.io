@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Skill } from '../../types/skill';
 
 interface SkillTagProps {
@@ -6,6 +6,8 @@ interface SkillTagProps {
 }
 
 const SkillTag: React.FC<SkillTagProps> = ({ skill }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const renderIcon = () => {
     if (skill.icon.endsWith('.svg')) {
       return (
@@ -20,10 +22,28 @@ const SkillTag: React.FC<SkillTagProps> = ({ skill }) => {
     }
   };
 
+  const handleClick = () => {
+    if (skill.description) {
+      setIsExpanded(!isExpanded);
+    }
+  };
+
   return (
-    <div className="skill-tag">
-      {renderIcon()}
-      {skill.name}
+    <div 
+      className={`skill-tag ${isExpanded ? 'expanded' : ''} ${skill.description ? 'clickable' : ''}`}
+      onClick={handleClick}
+    >
+      <div className="skill-content">
+        <div className="skill-title">
+          {renderIcon()}
+          {skill.name}
+        </div>
+        {skill.description && (
+          <div className="skill-description">
+            {skill.description}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

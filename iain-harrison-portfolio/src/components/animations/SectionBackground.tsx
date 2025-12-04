@@ -35,38 +35,23 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
     
     const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: '-20% 0px -20% 0px', // Balanced margins
-      threshold: 0.3 // Single threshold to reduce callback frequency
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section crosses center line
+      threshold: 0 // Any intersection triggers callback
     };
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      // Find the section that's most prominently visible
-      let bestSection: string | null = null;
-      let bestScore = 0;
-
+      // Simple approach: when a section crosses the center line, make it active
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.id;
           const mappedSection = sectionMapping[sectionId as keyof typeof sectionMapping];
           
-          if (mappedSection) {
-            const rect = entry.target.getBoundingClientRect();
-            const distanceFromTop = Math.abs(rect.top);
-            
-            // Score based on intersection ratio and position (lower distance = higher score)
-            const score = entry.intersectionRatio * (1000 / (distanceFromTop + 1));
-            
-            if (score > bestScore) {
-              bestScore = score;
-              bestSection = mappedSection;
-            }
+          if (mappedSection && mappedSection !== activeSection) {
+            // No debouncing - immediate smooth transition
+            setActiveSection(mappedSection);
           }
         }
       });
-
-      if (bestSection && bestSection !== activeSection) {
-        debouncedSetActiveSection(bestSection);
-      }
     };
 
     // Create single observer instance
@@ -424,13 +409,50 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
 
   const config = getBackgroundConfig(activeSection);
 
+  // Add body class for dark background sections
+  React.useEffect(() => {
+    if (activeSection === 'skills') {
+      document.body.classList.add('dark-background');
+    } else {
+      document.body.classList.remove('dark-background');
+    }
+    
+    return () => {
+      document.body.classList.remove('dark-background');
+    };
+  }, [activeSection]);
+
   return (
     <div className={`section-background ${className}`} data-section={activeSection}>
-      {/* Background with CSS transition for smooth color changes */}
-      <div 
-        className="section-gradient"
-        style={{ background: config.gradient }}
-      />
+      {/* Multiple background layers for smooth crossfade transitions */}
+      <div className="section-gradient hero-bg" style={{ 
+        background: '#ffffff',
+        opacity: activeSection === 'hero' ? 1 : 0
+      }} />
+      <div className="section-gradient about-bg" style={{ 
+        background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 30%, #93c5fd 70%, #60a5fa 100%)',
+        opacity: activeSection === 'about' ? 1 : 0
+      }} />
+      <div className="section-gradient skills-bg" style={{ 
+        background: 'linear-gradient(225deg, #0f172a 0%, #1e293b 30%, #334155 70%, #475569 100%)',
+        opacity: activeSection === 'skills' ? 1 : 0
+      }} />
+      <div className="section-gradient works-bg" style={{ 
+        background: getWorksConfig(worksCategory).gradient,
+        opacity: activeSection === 'works' ? 1 : 0
+      }} />
+      <div className="section-gradient testimonials-bg" style={{ 
+        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 25%, #e2e8f0 50%, #cbd5e1 75%, #94a3b8 100%)',
+        opacity: activeSection === 'testimonials' ? 1 : 0
+      }} />
+      <div className="section-gradient skills-showcase-bg" style={{ 
+        background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #3730a3 50%, #1e40af 75%, #1e3a8a 100%)',
+        opacity: activeSection === 'skills-showcase' ? 1 : 0
+      }} />
+      <div className="section-gradient contact-bg" style={{ 
+        background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #3730a3 50%, #1e40af 75%, #1e3a8a 100%)',
+        opacity: activeSection === 'contact' ? 1 : 0
+      }} />
       
       {/* Dynamic shapes */}
       {config.shapes > 0 && (
