@@ -908,15 +908,25 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
                               iconType === 'briefcase' ? 'bx-briefcase' :
                               iconType === 'chart' ? 'bx-bar-chart-alt-2' : 'bx-file-blank';
               
+              // Calculate sine wave position using JavaScript
+              const angle = (i / 12) * 360; // Degrees
+              const centerX = 55; // 55% of viewport width (moved right)
+              const centerY = 50; // 50% of viewport height
+              const radiusX = 6; // 6% (very small)
+              const radiusY = 4; // 4% (very small)
+              
+              const x = centerX + radiusX * Math.cos((angle * Math.PI) / 180);
+              const y = centerY + radiusY * Math.sin((angle * Math.PI) / 180);
+              
               return (
                 <div
                   key={`business-${i}`}
-                  className={`business-icon sine-wave-icon ${iconClass}`}
+                  className={`business-icon sine-wave-icon-js ${iconClass}`}
                   style={{
-                    animationDelay: `${i * 0.3}s`,
-                    '--wave-index': i,
-                    '--total-icons': 12
-                  } as React.CSSProperties}
+                    left: `${x}%`,
+                    top: `${y}%`,
+                    animationDelay: `${i * 0.3}s`
+                  }}
                 >
                   <i className={`bx ${iconName}`}></i>
                 </div>
@@ -1065,15 +1075,25 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ className = '' })
                               iconType === 'briefcase' ? 'bx-briefcase' :
                               iconType === 'chart' ? 'bx-bar-chart-alt-2' : 'bx-file-blank';
               
+              // Calculate sine wave position using JavaScript
+              const angle = (i / 8) * 360; // Degrees
+              const centerX = 50; // 50% of viewport width
+              const centerY = 40; // 40% of viewport height
+              const radiusX = 30; // 5% (very small)
+              const radiusY = 19; // 3% (very small)
+              
+              const x = centerX + radiusX * Math.cos((angle * Math.PI) / 180);
+              const y = centerY + radiusY * Math.sin((angle * Math.PI) / 180);
+              
               return (
                 <div
                   key={`sine-${i}`}
-                  className="all-element all-sine-wave-icon"
+                  className="all-element all-sine-wave-icon-js"
                   style={{
-                    '--wave-index': i,
-                    '--total-icons': 8,
+                    left: `${x}%`,
+                    top: `${y}%`,
                     animationDelay: `${i * 0.4}s`
-                  } as React.CSSProperties}
+                  }}
                 >
                   <i className={`bx ${iconName}`}></i>
                 </div>
