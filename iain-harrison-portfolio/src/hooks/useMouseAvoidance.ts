@@ -8,14 +8,12 @@ export const useMouseAvoidance = (containerSelector: string, elementSelector: st
     const elements = container.querySelectorAll(elementSelector);
     let mouseX = 0;
     let mouseY = 0;
-    let isMouseInContainer = false;
 
     const handleMouseMove = (e: Event) => {
       const mouseEvent = e as MouseEvent;
       const rect = container.getBoundingClientRect();
       mouseX = mouseEvent.clientX - rect.left;
       mouseY = mouseEvent.clientY - rect.top;
-      isMouseInContainer = true;
 
       elements.forEach((element) => {
         const el = element as HTMLElement;
@@ -57,8 +55,6 @@ export const useMouseAvoidance = (containerSelector: string, elementSelector: st
     };
 
     const handleMouseLeave = () => {
-      isMouseInContainer = false;
-      
       // Return all elements to original positions
       elements.forEach((element) => {
         const el = element as HTMLElement;
