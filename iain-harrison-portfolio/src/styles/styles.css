@@ -956,12 +956,12 @@ body:has(.section-background[data-section="skills"]) .skills svg {
 .works__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
   justify-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .works__img {
@@ -996,12 +996,43 @@ body:has(.section-background[data-section="skills"]) .skills svg {
   overflow: hidden;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s ease;
+  border: 2px solid transparent;
+}
+
+/* Shine sweep effect */
+.works__img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  z-index: 10;
+  transition: left 0.5s ease;
+  pointer-events: none;
 }
 
 .works__img:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) translateY(-12px) scale(1.04);
+  border-color: var(--first-color);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    0 15px 30px rgba(76, 164, 252, 0.25),
+    0 0 0 4px rgba(76, 164, 252, 0.3),
+    0 0 60px rgba(76, 164, 252, 0.2);
+}
+
+.works__img:hover::after {
+  left: 150%;
 }
 
 .works__img:hover .works__data {
@@ -1086,7 +1117,7 @@ body:has(.section-background[data-section="skills"]) .skills svg {
 }
 
 .testimonial-slide {
-  padding: 0 1rem;
+  padding: 1.5rem 1rem;
   outline: none;
 }
 
@@ -1098,7 +1129,7 @@ body:has(.section-background[data-section="skills"]) .skills svg {
   border: 1px solid var(--first-color-light);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .testimonial-card::before {
@@ -1116,8 +1147,10 @@ body:has(.section-background[data-section="skills"]) .skills svg {
 }
 
 .testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 48px rgba(72, 111, 158, 0.2);
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+  box-shadow:
+    0 6px 12px rgba(72, 111, 158, 0.12),
+    0 3px 6px rgba(76, 164, 252, 0.06);
 }
 
 .testimonial-content {
@@ -1329,6 +1362,64 @@ body.dark-background .education__line {
 
 
 /* Slick Carousel Custom Styles */
+/* Fix slick carousel for clean single-slide view */
+.testimonial-carousel .slick-list {
+  overflow: hidden;
+  padding: 1rem 0;
+  margin: 0 -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.testimonial-carousel .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-carousel .slick-slide {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+/* Only show the active slide */
+.testimonial-carousel .slick-slide.slick-active {
+  opacity: 1;
+}
+
+/* Clickable area hints for navigation */
+.testimonial-carousel {
+  position: relative;
+}
+
+/* Subtle hover zones - left and right 40% */
+.testimonial-carousel::before,
+.testimonial-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 60px;
+  width: 40%;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-carousel::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(76, 164, 252, 0.05) 0%, transparent 100%);
+}
+
+.testimonial-carousel::after {
+  right: 0;
+  background: linear-gradient(-90deg, rgba(76, 164, 252, 0.05) 0%, transparent 100%);
+}
+
+.testimonial-carousel:hover::before,
+.testimonial-carousel:hover::after {
+  opacity: 1;
+}
+
 .testimonial-carousel .slick-dots {
   bottom: -50px;
 }
@@ -1523,7 +1614,7 @@ body.dark-background .education__line {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity;
 }
 
@@ -4628,4 +4719,106 @@ body.modal-open {
 .all-element[data-returning="true"] {
   transform: translate(0, 0) scale(1);
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/*===== ENHANCED SCROLL & HOVER EFFECTS =====*/
+
+/* Scroll offset for fixed header - ensures sections don't hide under header */
+.section {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+/* 3D Card Hover Effect - Mouse tracking via CSS custom properties */
+.works__img,
+.testimonial-card {
+  --mouse-x: 0.5;
+  --mouse-y: 0.5;
+  transform-style: preserve-3d;
+}
+
+/* Mouse-tracking 3D effect - rotation based on mouse position */
+.works__img.mouse-tracking:hover {
+  transform:
+    perspective(1000px)
+    rotateX(calc((var(--mouse-y) - 0.5) * -8deg))
+    rotateY(calc((var(--mouse-x) - 0.5) * 8deg))
+    translateY(-12px)
+    scale(1.04);
+  border-color: var(--first-color);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    0 15px 30px rgba(76, 164, 252, 0.25),
+    0 0 0 4px rgba(76, 164, 252, 0.3),
+    0 0 60px rgba(76, 164, 252, 0.2);
+}
+
+.testimonial-card.mouse-tracking:hover {
+  transform:
+    perspective(1000px)
+    rotateX(calc((var(--mouse-y) - 0.5) * -4deg))
+    rotateY(calc((var(--mouse-x) - 0.5) * 4deg))
+    translateY(-6px);
+  box-shadow:
+    0 12px 24px rgba(72, 111, 158, 0.15),
+    0 6px 12px rgba(76, 164, 252, 0.08);
+}
+
+/* Contact section - brighter text for dark background */
+#contact .section-subtitle,
+#contact .section-title {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#contact .contact__subtitle {
+  color: var(--first-color);
+  font-weight: var(--font-bold);
+}
+
+#contact .contact__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Active nav link styling - Mobile (blue background) */
+.nav__link.active {
+  color: #ffffff;
+  font-weight: var(--font-bold);
+  position: relative;
+}
+
+.nav__link {
+  position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 1px;
+}
+
+.nav__link.active::after,
+.nav__link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Desktop nav - different colors since background is light */
+@media screen and (min-width: 768px) {
+  .nav__link::after {
+    background: var(--first-color-dark);
+  }
+
+  .nav__link.active {
+    color: var(--first-color-dark);
+  }
+
+  .nav__link:hover {
+    color: var(--first-color-dark);
+  }
 }

@@ -123,3 +123,59 @@ html {
     transform: scale(1);
   }
 }
+
+/*===== ICON MICRO-ANIMATIONS =====*/
+/* These use transform only - no layout impact */
+/* Note: Does NOT apply to elements with existing hover transforms (skill-tag, filter-btn) */
+
+@keyframes iconBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes iconWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(2deg); }
+}
+
+/* Social icons - bounce on hover */
+.home__social-link:hover i,
+.home__social-link:hover svg {
+  animation: iconBounce 0.4s ease;
+}
+
+/* Navigation icons - wiggle on hover */
+.nav__toggle:hover i,
+.nav__close:hover i {
+  animation: iconWiggle 0.3s ease;
+}
+
+/* Quote icon - float effect */
+.quote-icon {
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+/* Contact icons - bounce on hover */
+.contact__icon:hover,
+.about__information-icon:hover {
+  animation: iconBounce 0.4s ease;
+}
+
+/* Accessibility - respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .home__social-link:hover i,
+  .home__social-link:hover svg,
+  .nav__toggle:hover i,
+  .nav__close:hover i,
+  .quote-icon,
+  .contact__icon:hover,
+  .about__information-icon:hover {
+    animation: none;
+  }
+}

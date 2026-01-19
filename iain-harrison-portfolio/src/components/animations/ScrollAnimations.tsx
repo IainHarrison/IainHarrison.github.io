@@ -125,6 +125,42 @@ const BounceIn: React.FC<AnimationProps> = ({ children, ...props }) => (
   </AnimateIn>
 );
 
+// Pop in effect - scale with slight blur
+const PopIn: React.FC<AnimationProps> = ({ children, ...props }) => (
+  <AnimateIn
+    from={{ opacity: 0, transform: 'scale(0.85)', filter: 'blur(4px)' }}
+    to={{ opacity: 1, transform: 'scale(1)', filter: 'blur(0px)' }}
+    duration={500}
+    {...props}
+  >
+    {children}
+  </AnimateIn>
+);
+
+// Zoom in from far away
+const ZoomIn: React.FC<AnimationProps> = ({ children, ...props }) => (
+  <AnimateIn
+    from={{ opacity: 0, transform: 'scale(0.5) translateY(20px)' }}
+    to={{ opacity: 1, transform: 'scale(1) translateY(0)' }}
+    duration={600}
+    {...props}
+  >
+    {children}
+  </AnimateIn>
+);
+
+// Slide in from bottom with bounce
+const SlideUpBounce: React.FC<AnimationProps> = ({ children, ...props }) => (
+  <AnimateIn
+    from={{ opacity: 0, transform: 'translateY(80px)' }}
+    to={{ opacity: 1, transform: 'translateY(0)' }}
+    duration={700}
+    {...props}
+  >
+    {children}
+  </AnimateIn>
+);
+
 // Stagger container for multiple elements
 interface StaggerProps {
   children: ReactNode;
@@ -132,13 +168,13 @@ interface StaggerProps {
   className?: string;
 }
 
-const Stagger: React.FC<StaggerProps> = ({ 
-  children, 
+const Stagger: React.FC<StaggerProps> = ({
+  children,
   staggerDelay = 100,
-  className = '' 
+  className = ''
 }) => {
   const childrenArray = React.Children.toArray(children);
-  
+
   return (
     <div className={className}>
       {childrenArray.map((child, index) => (
@@ -146,6 +182,36 @@ const Stagger: React.FC<StaggerProps> = ({
           {child}
         </SlideUp>
       ))}
+    </div>
+  );
+};
+
+// Wave stagger - items come in with a wave-like timing curve
+interface WaveStaggerProps extends StaggerProps {
+  waveIntensity?: number;
+}
+
+const WaveStagger: React.FC<WaveStaggerProps> = ({
+  children,
+  staggerDelay = 80,
+  waveIntensity = 0.3,
+  className = ''
+}) => {
+  const childrenArray = React.Children.toArray(children);
+
+  return (
+    <div className={className}>
+      {childrenArray.map((child, index) => {
+        // Create a wave effect using sine function
+        const waveOffset = Math.sin(index * waveIntensity) * 50;
+        const baseDelay = index * staggerDelay;
+
+        return (
+          <PopIn key={index} delay={baseDelay + Math.abs(waveOffset)}>
+            {child}
+          </PopIn>
+        );
+      })}
     </div>
   );
 };
@@ -202,7 +268,11 @@ export const Animate = {
   RotateIn,
   FlipIn,
   BounceIn,
+  PopIn,
+  ZoomIn,
+  SlideUpBounce,
   Stagger,
+  WaveStagger,
   Typewriter,
   Custom: AnimateIn
 };

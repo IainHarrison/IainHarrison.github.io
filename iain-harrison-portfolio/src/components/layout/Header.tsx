@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { useActiveSection } from '../../hooks/useActiveSection';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Section IDs for active tracking
+  const sectionIds = useMemo(() => [
+    'home', 'about', 'skills', 'works', 'testimonials', 'skills-showcase', 'contact'
+  ], []);
+
+  const activeSection = useActiveSection({ sectionIds, offset: 100 });
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -39,37 +47,37 @@ const Header: React.FC = () => {
 
           <ul className="nav__list">
             <li className="nav__item">
-              <a href="#home" className="nav__link active" onClick={() => scrollToSection('home')}>
+              <a href="#home" className={`nav__link ${activeSection === 'home' ? 'active' : ''}`} onClick={() => scrollToSection('home')}>
                 Home
               </a>
             </li>
             <li className="nav__item">
-              <a href="#about" className="nav__link" onClick={() => scrollToSection('about')}>
+              <a href="#about" className={`nav__link ${activeSection === 'about' ? 'active' : ''}`} onClick={() => scrollToSection('about')}>
                 About
               </a>
             </li>
             <li className="nav__item">
-              <a href="#skills" className="nav__link" onClick={() => scrollToSection('skills')}>
+              <a href="#skills" className={`nav__link ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => scrollToSection('skills')}>
                 Skills
               </a>
             </li>
             <li className="nav__item">
-              <a href="#works" className="nav__link" onClick={() => scrollToSection('works')}>
+              <a href="#works" className={`nav__link ${activeSection === 'works' ? 'active' : ''}`} onClick={() => scrollToSection('works')}>
                 Works
               </a>
             </li>
             <li className="nav__item">
-              <a href="#testimonials" className="nav__link" onClick={() => scrollToSection('testimonials')}>
+              <a href="#testimonials" className={`nav__link ${activeSection === 'testimonials' ? 'active' : ''}`} onClick={() => scrollToSection('testimonials')}>
                 Testimonials
               </a>
             </li>
             <li className="nav__item">
-              <a href="#skills-showcase" className="nav__link" onClick={() => scrollToSection('skills-showcase')}>
+              <a href="#skills-showcase" className={`nav__link ${activeSection === 'skills-showcase' ? 'active' : ''}`} onClick={() => scrollToSection('skills-showcase')}>
                 Skills Showcase
               </a>
             </li>
             <li className="nav__item">
-              <a href="#contact" className="nav__link" onClick={() => scrollToSection('contact')}>
+              <a href="#contact" className={`nav__link ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => scrollToSection('contact')}>
                 Contact me
               </a>
             </li>

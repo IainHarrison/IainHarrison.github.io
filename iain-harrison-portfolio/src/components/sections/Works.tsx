@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { projects } from '../../data/projects';
 import Modal from '../ui/Modal';
 import PortfolioFilter from '../ui/PortfolioFilter';
+import ImageWithSkeleton from '../ui/ImageWithSkeleton';
 import { Project } from '../../types/project';
 import { Animate } from '../animations/ScrollAnimations';
 import '../animations/animations.css';
@@ -68,11 +69,11 @@ const Works: React.FC = () => {
               delay={400 + (index * 150)}
               className="works__img hover-lift"
             >
-              <div 
+              <div
                 onClick={() => handleProjectClick(project)}
                 style={{ cursor: 'pointer', width: '100%', height: '100%' }}
               >
-                <img src={project.image} alt={project.title} />
+                <ImageWithSkeleton src={project.image} alt={project.title} />
                 <div className="works__data">
                   <span className="works__title">{project.title}</span>
                 </div>
