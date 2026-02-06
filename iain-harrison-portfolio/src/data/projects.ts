@@ -2,6 +2,50 @@ import { Project } from '../types/project';
 
 export const projects: Project[] = [
   {
+    id: "animask",
+    title: "Animask",
+    image: "/assets/img/work14.jpg",
+    description: "Puzzle game created during Global Game Jam 2026 - Winner at Enschede",
+    technologies: ["Unity", "C#", "Game Design", "Puzzle Design"],
+    categories: ['games'],
+    links: {
+      itchio: "https://iainharrison.itch.io/animask"
+    },
+    details: {
+      overview: "\"Animask\" is a puzzle game created during Global Game Jam 2026 with the theme \"Masks\". Players take on the role of an animal researcher who must guide animals to their homes using the unique abilities granted by different masks. Each mask provides distinct powers that players must strategically use to solve environmental puzzles and help the animals reach safety.",
+      role: "Gameplay Programmer & Designer",
+      technologies: [
+        "Unity Game Engine",
+        "C# Programming",
+        "Puzzle Design",
+        "Cross-disciplinary Team Management"
+      ],
+      contributions: [
+        "Designed and implemented core gameplay mechanics and puzzle systems",
+        "Created the mask ability system that drives the core gameplay loop",
+        "Collaborated on game design decisions with the design team",
+        "Managed cross-disciplinary coordination between art, design, and programming"
+      ],
+      outcomes: [
+        "Winner at the Global Game Jam 2026 Enschede local event",
+        "Third consecutive win at Enschede game jams",
+        "Improved puzzle design skills through iterative level creation",
+        "Enhanced cross-disciplinary team management abilities"
+      ],
+      images: [
+        "/assets/img/Animasks1.png",
+        "/assets/img/Animasks2.png",
+        "/assets/img/Animasks3.png",
+        "/assets/img/Animasks4.png"
+      ],
+      teamMembers: [
+        { name: "Lena Van", role: "Artist", linkedinUrl: "https://www.linkedin.com/in/lena-van/" },
+        { name: "Osama Boumelhem", role: "Designer", linkedinUrl: "https://www.linkedin.com/in/osama-boumelhem-442846257/" },
+        { name: "Arjen de Aldrey", role: "UI Developer", linkedinUrl: "https://www.linkedin.com/in/arjendealdrey/" }
+      ]
+    }
+  },
+  {
     id: "dusseldorp",
     title: "Dusseldorp Platform",
     image: "/assets/img/work13.jpg",
