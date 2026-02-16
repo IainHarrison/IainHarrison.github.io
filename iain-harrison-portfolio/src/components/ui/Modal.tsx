@@ -63,10 +63,12 @@ const Modal: React.FC<ModalProps> = ({ project, isOpen, onClose }) => {
           borderRadius: '8px',
           maxWidth: '90vw',
           maxHeight: '90vh',
-          overflow: 'auto',
+          overflow: 'hidden',
           position: 'relative',
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
-          width: '800px'
+          width: '800px',
+          display: 'flex',
+          flexDirection: 'column' as const
         }}
       >
         <div 
@@ -105,7 +107,9 @@ const Modal: React.FC<ModalProps> = ({ project, isOpen, onClose }) => {
           className="modal-body"
           style={{
             padding: '20px',
-            lineHeight: '1.6'
+            lineHeight: '1.6',
+            overflow: 'auto',
+            flex: '1'
           }}
         >
           {project.details.videoUrl && (

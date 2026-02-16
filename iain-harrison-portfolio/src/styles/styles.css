@@ -1111,9 +1111,11 @@ body:has(.section-background[data-section="skills"]) .skills svg {
 
 /* Testimonial Carousel Styles */
 .testimonial-carousel {
-  max-width: 800px;
+  max-width: 900px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem 0 2rem;
+  overflow-x: clip;
 }
 
 .testimonial-slide {
@@ -1364,11 +1366,8 @@ body.dark-background .education__line {
 /* Slick Carousel Custom Styles */
 /* Fix slick carousel for clean single-slide view */
 .testimonial-carousel .slick-list {
-  overflow: hidden;
-  padding: 1rem 0;
-  margin: 0 -1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  overflow: visible;
+  margin: 0 4rem;
 }
 
 .testimonial-carousel .slick-track {
@@ -1391,34 +1390,6 @@ body.dark-background .education__line {
   position: relative;
 }
 
-/* Subtle hover zones - left and right 40% */
-.testimonial-carousel::before,
-.testimonial-carousel::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 60px;
-  width: 40%;
-  z-index: 5;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.testimonial-carousel::before {
-  left: 0;
-  background: linear-gradient(90deg, rgba(76, 164, 252, 0.05) 0%, transparent 100%);
-}
-
-.testimonial-carousel::after {
-  right: 0;
-  background: linear-gradient(-90deg, rgba(76, 164, 252, 0.05) 0%, transparent 100%);
-}
-
-.testimonial-carousel:hover::before,
-.testimonial-carousel:hover::after {
-  opacity: 1;
-}
 
 .testimonial-carousel .slick-dots {
   bottom: -50px;
@@ -1443,11 +1414,11 @@ body.dark-background .education__line {
 }
 
 .testimonial-carousel .slick-prev {
-  left: -50px;
+  left: 10px;
 }
 
 .testimonial-carousel .slick-next {
-  right: -50px;
+  right: 10px;
 }
 
 .testimonial-carousel .slick-prev:before,
@@ -1466,7 +1437,12 @@ body.dark-background .education__line {
 /* Mobile Responsiveness for Testimonial Carousel */
 @media screen and (max-width: 768px) {
   .testimonial-carousel {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0 2rem;
+  }
+
+  .testimonial-carousel .slick-list {
+    margin: 0;
+    overflow: hidden;
   }
 
   .testimonial-card {

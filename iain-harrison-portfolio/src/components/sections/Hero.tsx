@@ -45,15 +45,15 @@ const Hero: React.FC = () => {
               >
                 <i className='bx bxl-linkedin'></i>
               </a>
-              <a 
-                href="https://github.com/IainHarrison" 
+              {/* <a
+                href="https://github.com/IainHarrison"
                 className="home__social-link hover-scale"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ animationDelay: '2150ms' }}
               >
                 <i className='bx bxl-github'></i>
-              </a>
+              </a> */}
               <a 
                 href="https://iainharrison.itch.io/" 
                 className="home__social-link hover-scale"

@@ -13,13 +13,6 @@ const Works: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const handleProjectClick = (project: Project) => {
-    // If project has external link only, open it directly
-    if (project.links.external && !project.links.itchio && !project.links.github && !project.links.demo) {
-      window.open(project.links.external, '_blank');
-      return;
-    }
-    
-    // Otherwise, open modal
     setSelectedProject(project);
     setIsModalOpen(true);
   };
