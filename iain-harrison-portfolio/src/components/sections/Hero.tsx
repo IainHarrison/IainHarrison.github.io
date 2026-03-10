@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
           <Animate.BounceIn delay={2600}>
             <a 
               download="" 
-              href="/assets/Iain Harrison CV 2025.pdf" 
+              href="/assets/Iain Harrison CV.pdf" 
               className="button home__button hover-lift"
             >
               Download my CV
